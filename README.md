@@ -5,13 +5,11 @@ Responsive grid framework that's laser focused and more flexible than Bootstrap 
 
 ### Why Bother? ###
 
-Maybe you've been using Bootstrap or Foundation and realized that for one section your designer used an 8-column grid and for another a 5-column grid. And in one section, the elements all have padding, but in another, you need the content to come right up against the column edges. Or you want the rows to have some margin above and below them, but not the columns. Bootstrap and Foundation classes can't solve any of that for you.
-
-### Why Not? ###
-
 eb-grid is currently just 3.8 kb minified, and just 1.0 kb gzipped. So basically zero performance impact.
 
 It also **DOES NOT** collide with and can be used in the same project alongside Bootstrap and Foundation (as long as you're using them on separate elements).
+
+Maybe you've been using Bootstrap or Foundation and realized that for one section your designer used an 8-column grid and for another a 5-column grid. And in one section, the elements all have padding, but in another, you need the content to come right up against the column edges. Or you want the rows to have some margin above and below them, but not the columns. Bootstrap and Foundation classes can't solve any of that for you.
 
 ## Basics ##
 

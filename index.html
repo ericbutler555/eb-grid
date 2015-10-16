@@ -14,6 +14,11 @@
   <!--DIV EXAMPLE-->
   
   <div class="layer">
+    <div class="col">
+      <h1>Grid Example</h1>
+      <p>Check the source code to see how the class names affect the following column widths at various viewport sizes. (Colors are for demo purposes only.)</p>
+    </div><!--/.col-->
+
     <div class="red col full tab-half lap-1-4 desk-1-6">Column 1</div>
     <div class="orange col half tab-half lap-3-4 desk-1-6">Column 2</div>
     <div class="yellow col half tab-1-3 lap-1-5 desk-1-6">Column 3</div>
@@ -22,12 +27,69 @@
     <div class="indigo col third tab-full desk-1-6">Column 6</div>
   </div><!--/.layer-->
 
-  <!--FORM EXAMPLE-->
+</div><!--/.wrap-->
+
+
+<div class="wrap">
+  
+  <div class="layer">
+    <h1>More Examples</h1>
+  </div><!--/.layer-->
+  
+  <div class="layer bump-b">
+    <div class="col indigo">Full-width always</div>
+  </div>
+  
+  
+  <div class="layer align-c bump">
+    
+    <div class="col tab-1-3 pad red">
+      Full-width mobile, 1/3-width beyond, inherits center alignment from layer element
+    </div>
+    
+    <div class="col tab-1-3 pad orange">
+      Full-width mobile, 1/3-width beyond, inherits center alignment from layer element
+    </div>
+    
+    <div class="col tab-1-3 pad align-r yellow">
+      Full-width mobile, 1/3-width beyond, aligned right
+    </div>
+
+  </div><!--/.layer-->
+  
+  
+  <div class="layer bump">
+    
+    <div class="col half green pad-tb">
+      1/2-width always, padding on top/bottom only
+    </div>
+    
+    <div class="col half blue pad-all">
+      1/2-width always, padding on all 4 sides
+    </div>
+    
+  </div><!--/.layer-->
+  
+  
+  <div class="layer green">
+    <div class="wrap yellow">
+      <div class="layer orange">
+        <div class="col red">
+          Unlike Bootstrap, .wrap elements can be nested in other .wrap elements without breaking anything.
+        </div><!--/.col-->
+      </div><!--/.layer-->
+    </div><!--/.wrap-->
+  </div><!--/.layer-->
+  
+</div><!--/.wrap-->
+
+<div class="wrap">
   
   <div class="layer">
     
     <div class="col full pad">
-      <h1>Form</h1>
+      <h1>Form Example</h1>
+      <p>Forms should work pretty well with the existing grid, but a form-specific css file is in development as an optional add-in.</p>
     </div><!--/.col-->
     
     <div class="col full tab-1-2 pad bump-b print-half">
@@ -40,7 +102,7 @@
       <input class="full lap-4-5 desk-6-7" placeholder="Last Name">
     </div><!--/.col-->
     
-    <div class="col full align-c pad">
+    <div class="col full align-c pad bump-b">
       <input type="submit">
     </div><!--/.col-->
     
