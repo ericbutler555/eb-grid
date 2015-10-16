@@ -1,0 +1,6 @@
+.col:not([class*="align-"]) > label,
+.col:not([class*="align-"]) > input,
+.col:not([class*="align-"]) > select,
+.col:not([class*="align-"]) > textarea,
+.col:not([class*="align-"]) > button,
+.col:not([class*="align-"]) > div { float: left; }
