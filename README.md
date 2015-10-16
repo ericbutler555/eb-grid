@@ -90,7 +90,7 @@ is the same as:
 
     <div class="col one-fourth"></div>
 
-This extra option might be easier to read and understand that the column should be 1/4 the width at all viewport sizes.
+This alternate syntax might be easier to read and understand that the column should be 1/4 the width at all viewport sizes.
 
 These `.ph` and un-prefixed classes will apply to elements at any viewport size, unless another class prefixed by `tab-`, `lap-`, or `desk-` is added to the element (again, just like Bootstrap and Foundation).
 
