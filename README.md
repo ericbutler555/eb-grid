@@ -139,6 +139,16 @@ Here is a table of all styled column widths, and the class names you can use for
   </thead>
   <tbody>
     <tr>
+      <td>-full</td>
+      <td>full</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>-auto</td>
+      <td>auto</td>
+      <td>its auto/default size</td>
+    </tr>
+    <tr>
       <td>-1-2</td>
       <td>half, one-half</td>
       <td>50%</td>
