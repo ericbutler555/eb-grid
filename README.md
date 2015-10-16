@@ -1,2 +1,324 @@
 # eb-grid
 Responsive grid framework that's laser focused and more flexible than Bootstrap or Foundation. Tiny footprint, no class collisions.
+
+**eb-grid is still a work in progress.**
+
+### Why Bother? ###
+
+Maybe you've been using Bootstrap or Foundation and realized that for one section your designer used an 8-column grid and for another a 5-column grid. And in one section, the elements all have padding, but in another, you need the content to come right up against the column edges. Or you want the rows to have some margin above and below them, but not the columns. Bootstrap and Foundation classes can't solve any of that for you.
+
+### Why Not? ###
+
+eb-grid is currently just 3.8 kb minified, and just 1.0 kb gzipped. So basically zero performance impact.
+
+It also **DOES NOT** collide with and can be used in the same project alongside Bootstrap and Foundation (as long as you're using them on separate elements).
+
+## Basics ##
+
+eb-grid has the same strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
+
+The main difference of eb-grid is that instead of using a set 12- or 16-column grid structure, eb-grid **uses fractions in its class names** to allow you to set your own column counts for each "layer" of content. There's also a set of "helper"-style classes for optionally adding padding and margins to, really, any element in the framework: rows or columns or wrappers, on the fly.
+
+>"Layers" are the same as Bootstrap's and Foundation's "rows". I wanted to be able to use eb-grid even if the project already uses Bootstrap or Foundation, so I've changed the class names to prevent any collisions.
+
+### Basic Examples ###
+
+    <div class="wrap">
+    
+      <div class="layer">
+      
+        <div class="col half">
+          This will span half the width of the layer, always.
+        </div><!--/.col-->
+        
+        <div class="col half tab-1-5 lap-3-7 desk-5-8">
+          This div will span:
+          - 1/2 the width of the layer for viewports less than 768px,
+          - 1/5 the width between 768 and 991px,
+          - 3/7 the width between 992 and 1199px, and
+          - 5/8 the width of viewports 1200px or greater.
+        </div><!--/.col-->
+        
+        <div class="col full pad">
+          This will span the entire width of the layer, always,
+          and will have 10px of padding on its left and right sides.
+        </div><!--/.col-->
+        
+        <div class="col full pad-all">
+          This will span the entire width of the layer, always,
+          and will have 10px of padding on all 4 of its sides.
+        </div><!--/.col-->
+        
+      </div><!--/.layer-->
+      
+    </div><!--/.wrap-->
+
+## Classes ##
+
+### Wraps and layers (containers) ###
+
+`.wrap`
+
+Like the `.container` class in Bootstrap, this wraps around all layer (row) elements.
+
+`.layer`
+
+Like the `.row` class in Bootstrap, this wraps around all columns that should be positioned side-by-side, even if that's only at a certain viewport size.
+
+`.col`
+
+Also like Bootstrap, but without the appended viewport-size and column-width settings. These are blocks of content that will be positioned side-by-side in your layout. **Note:** `.col` can be used on the element even if it is the only element in the `.layer` and will span full-width at all times.
+
+### Column widths, part 1: Breakpoints ###
+
+There are 4 breakpoints in the eb-grid framework:
+
+* ph (short for "phone")
+* tab (short for "tablet")
+* lap (short for "laptop")
+* desk (short for "desktop")
+
+There is also a print-specific class:
+
+* print
+
+These nicknames form the first part of any class name for a block of content, or `.col`. eb-grid takes a mobile-first approach, so the `.ph` prefix is actually optional. For example:
+
+    <div class="col ph-1-4"></div>
+
+is the same as:
+
+    <div class="col one-fourth"></div>
+
+This extra option might be easier to read and understand that the column should be 1/4 the width at all viewport sizes.
+
+These `.ph` and un-prefixed classes will apply to elements at any viewport size, unless another class prefixed by `tab-`, `lap-`, or `desk-` is added to the element (again, just like Bootstrap and Foundation).
+
+<table>
+  <thead>
+    <tr>
+      <th>Class prefix</th>
+      <th>Viewport size it applies to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.ph-</td>
+      <td>0 - 767px</td>
+    </tr>
+    <tr>
+      <td>.tab-</td>
+      <td>768px - 991px</td>
+    </tr>
+    <tr>
+      <td>.lap-</td>
+      <td>992px - 1199px</td>
+    </tr>
+    <tr>
+      <td>.desk-</td>
+      <td>1200px +</td>
+    </tr>
+    <tr>
+      <td>.print-</td>
+      <td>Printed pages, regardless of size</td>
+    </tr>
+  </tbody>
+</table>
+
+### Column widths, part 2: Fractional widths ###
+
+Here is a table of all styled column widths, and the class names you can use for them:
+
+<table>
+  <thead>
+    <tr>
+      <th>Class suffix</th>
+      <th>Alternate syntax to replace "ph" prefix:</th>
+      <th>Width of element in layer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-1-2</td>
+      <td>half, one-half</td>
+      <td>50%</td>
+    </tr>
+    <tr>
+      <td>-1-3</td>
+      <td>third, one-third</td>
+      <td>33.33333333%</td>
+    </tr>
+    <tr>
+      <td>-2-3</td>
+      <td>two-thirds</td>
+      <td>66.66666667%</td>
+    </tr>
+    
+    <tr>
+      <td>-1-4</td>
+      <td>fourth, one-fourth</td>
+      <td>25%</td>
+    </tr>
+    <tr>
+      <td>-3-4</td>
+      <td>three-fourths</td>
+      <td>75%</td>
+    </tr>
+    <tr>
+      <td>-1-5</td>
+      <td>fifth, one-fifth</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>-2-5</td>
+      <td>two-fifths</td>
+      <td>40%</td>
+    </tr>
+    <tr>
+      <td>-3-5</td>
+      <td>three-fifths</td>
+      <td>60%</td>
+    </tr>
+    <tr>
+      <td>-4-5</td>
+      <td>four-fifths</td>
+      <td>80%</td>
+    </tr>
+    <tr>
+      <td>-1-6</td>
+      <td>sixth, one-sixth</td>
+      <td>16.66666667%</td>
+    </tr>
+    <tr>
+      <td>-5-6</td>
+      <td>five-sixths</td>
+      <td>83.33333333%</td>
+    </tr>
+    <tr>
+      <td>-1-7</td>
+      <td>seventh, one-seventh</td>
+      <td>14.28571428%</td>
+    </tr>
+    <tr>
+      <td>-2-7</td>
+      <td>two-sevenths</td>
+      <td>28.57142857%</td>
+    </tr>
+    <tr>
+      <td>-3-7</td>
+      <td>three-sevenths</td>
+      <td>42.85714285%</td>
+    </tr>
+    <tr>
+      <td>-4-7</td>
+      <td>four-sevenths</td>
+      <td>57.14285714%</td>
+    </tr>
+    <tr>
+      <td>-5-7</td>
+      <td>five-sevenths</td>
+      <td>71.42857142%</td>
+    </tr>
+    <tr>
+      <td>-6-7</td>
+      <td>six-sevenths</td>
+      <td>85.71428571%</td>
+    </tr>
+    <tr>
+      <td>-1-8</td>
+      <td>eighth, one-eighth</td>
+      <td>12.5%</td>
+    </tr>
+    <tr>
+      <td>-3-8</td>
+      <td>three-eighths</td>
+      <td>37.5%</td>
+    </tr>
+    <tr>
+      <td>-5-8</td>
+      <td>five-eighths</td>
+      <td>62.5%</td>
+    </tr>
+    <tr>
+      <td>-7-8</td>
+      <td>seven-eighths</td>
+      <td>87.5%</td>
+    </tr>
+  </tbody>
+</table>
+
+### Helper classes ###
+
+The only other thing eb-grid handles is spacing and alignment.
+
+**Alignment**
+
+Set the alignment of text and other inline-displayed content using one of the following classes:
+
+`.align-l`
+
+Aligns content left.
+
+`.align-r`
+
+Aligns content right.
+
+`.align-c`
+
+Aligns content center.
+
+**Padding**
+
+eb-grid offers flexibility when it comes to padding on your layers and columns of content. By default there is no padding on the `.col` and `.layer` classes.
+
+If you want to add padding to an element, use one of the following:
+
+`.pad`
+
+Sets 10px of padding on the left and right sides of the element. Does NOT set padding on the top and bottom (use `.pad-tb` or `.pad-all` for that).
+
+`.pad-all`
+
+Sets 10px of padding on all sides of the element.
+
+`.pad-tb`
+
+Sets 10px of padding on the top and bottom sides of the element. Does NOT set padding on the left and right sides (use `.pad` or `.pad-all` for that).
+
+`.pad-l`
+
+Sets 10px of padding on the left side of the element. Leaves all other sides 0.
+
+`.pad-r`
+
+Sets 10px of padding on the right side of the element. Leaves all other sides 0.
+
+`.pad-t`
+
+Sets 10px of padding on the top side of the element. Leaves all other sides 0.
+
+`.pad-b`
+
+Sets 10px of padding on the bottom side of the element. Leaves all other sides 0.
+
+**Margins**
+
+*This is still in development.* Currently, eb-grid offers flexibility when it comes to margins on the top and bottom of your layers and columns of content. By default there is a net-zero left and right margin on the `.col` and `.layer` classes, and no top and bottom margin.
+
+If you want to add top and/or bottom margin to an element, use one of the following:
+
+`.bump`
+
+Sets 10px of margin on the top and bottom sides of the element. Does NOT change the margins on the left and right sides.
+
+`.bump-t`
+
+Sets 10px of margin on the top side of the element. Leaves all other margins as-is.
+
+`.bump-b`
+
+Sets 10px of margin on the bottom side of the element. Leaves all other margins as-is.
+
+## Support ##
+
+If you have questions or suggestions about eb-grid, create an issue. I'd like this to be as good as it can be.
