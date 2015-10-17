@@ -9,7 +9,7 @@ Maybe you've been using Bootstrap or Foundation and realized that for one sectio
 
 Also:
 
-eb-grid is currently just **3.8 kb minified, and just 1.0 kb gzipped.** So there's basically zero performance impact.
+eb-grid is currently just **5.2 kb minified, and just 1.2 kb gzipped.** So there's almost zero performance impact.
 
 It also **does not interfere** with, and can be used in the same project alongside, other responsive grids like Bootstrap and Foundation (as long as you're using them on separate elements). So you can use eb-grid as a patch to handle just a certain section, or slowly phase it into a legacy code base.
 
@@ -259,11 +259,13 @@ eb-grid allows you to easily set any fractional width up to eighths. I stopped t
   </tbody>
 </table>
 
-So you put the breakpoint prefix together with the fractional width suffix, and you have your class. Use as many classes as you want to cover each breakpoint. Example: `<div class="col  ph-1-2  tab-2-3  lap-3-4  desk-4-5">`.
+So **breakpoint prefix + fractional width suffix = class.** Use as many classes as you want to handle the element's width at each breakpoint. Example: `<div class="col ph-1-2 tab-2-3 lap-3-4 desk-4-5">`.
 
 ### Helper classes ###
 
-The only other things eb-grid tries to handle are alignment and spacing of the layers and columns.
+The only other things eb-grid tries to handle are alignment and spacing on the layers and columns.
+
+-----
 
 **Alignment**
 
@@ -280,6 +282,22 @@ Aligns content right.
 `.align-c`
 
 Aligns content center.
+
+`.align-col-l`
+
+Floats block elements (like `.col`s) left.
+
+`.align-col-r`
+
+Floats block elements (like `.col`s) right.
+
+`.align-col-c`
+
+Floats block elements (like `.col`s) in the center of the layer.
+
+**Note:** You can also add a breakpoint prefix to any of the above alignment classes, to set text or column alignment specifically for a certain breakpoint. For example, an element with `class="col tab-align-r tab-align-col-c desk-align-c desk-align-col-l"` would be centered in the layer with right-aligned text at 768px or wider, and would be floated left in the layer with centered text at 1200px or wider.
+
+-----
 
 **Padding**
 
@@ -314,6 +332,10 @@ Sets 10px of padding on the top side of the element. Leaves all other sides 0.
 `.pad-b`
 
 Sets 10px of padding on the bottom side of the element. Leaves all other sides 0.
+
+**Note:** You can also add a breakpoint prefix to any of the above padding classes, to set padding specifically for a certain breakpoint. For example. an element with `class="col tab-pad-r lap-pad desk-pad-all"` would have no padding in phone-sized viewports, 10px of right padding at 768px or wider, 10px of left and right padding at 992px or wider, and 10px of left, right, top, and bottom padding at 1200px or wider.
+
+-----
 
 **Margins**
 

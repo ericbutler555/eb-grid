@@ -1,6 +1,5 @@
 /*** globals ***/
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
 /*** wraps and layers ***/
 .wrap { width: 100%; margin: 0 auto; padding: 0 10px; }
 .layer { margin-left: -10px; margin-right: -10px; }
@@ -22,6 +21,9 @@ html, body { margin: 0; padding: 0; }
 .align-l { text-align: left; }
 .align-r { text-align: right; }
 .align-c { text-align: center; }
+.align-col-l { float: left !important; }
+.align-col-r { float: right !important; }
+.align-col-c { float: none; margin-left: auto; margin-right: auto; }
 /*** column widths ***/
 .ph-auto, .auto { width: auto; }
 .ph-full, .full { width: 100%; }
@@ -71,6 +73,21 @@ html, body { margin: 0; padding: 0; }
   .tab-3-8 { width: 37.5%; }
   .tab-5-8 { width: 62.5%; }
   .tab-7-8 { width: 87.5%; }
+  /*** spacing ***/
+  .tab-pad { padding-left: 10px; padding-right: 10px; }
+  .tab-pad-l { padding-left: 10px; }
+  .tab-pad-r { padding-right: 10px; }
+  .tab-pad-tb, tab-.pad-bt { padding-top: 10px; padding-bottom: 10px; }
+  .tab-pad-t { padding-top: 10px; }
+  .tab-pad-b { padding-bottom: 10px; }
+  .tab-pad-all { padding: 10px; }
+  /*** alignment ***/
+  .tab-align-l { text-align: left; }
+  .tab-align-r { text-align: right; }
+  .tab-align-c { text-align: center; }
+  .tab-align-col-l { float: left !important; }
+  .tab-align-col-r { float: right !important; }
+  .tab-align-col-c { float: none; margin-left: auto; margin-right: auto; }
 }
 /*** laptop widths ***/
 @media only screen and (min-width: 992px) {
@@ -97,6 +114,21 @@ html, body { margin: 0; padding: 0; }
   .lap-3-8 { width: 37.5%; }
   .lap-5-8 { width: 62.5%; }
   .lap-7-8 { width: 87.5%; }
+  /*** spacing ***/
+  .lap-pad { padding-left: 10px; padding-right: 10px; }
+  .lap-pad-l { padding-left: 10px; }
+  .lap-pad-r { padding-right: 10px; }
+  .lap-pad-tb, lap-.pad-bt { padding-top: 10px; padding-bottom: 10px; }
+  .lap-pad-t { padding-top: 10px; }
+  .lap-pad-b { padding-bottom: 10px; }
+  .lap-pad-all { padding: 10px; }
+  /*** alignment ***/
+  .lap-align-l { text-align: left; }
+  .lap-align-r { text-align: right; }
+  .lap-align-c { text-align: center; }
+  .lap-align-col-l { float: left !important; }
+  .lap-align-col-r { float: right !important; }
+  .lap-align-col-c { float: none; margin-left: auto; margin-right: auto; }
 }
 /*** desktop widths ***/
 @media only screen and (min-width: 1200px) {
@@ -123,6 +155,21 @@ html, body { margin: 0; padding: 0; }
   .desk-3-8 { width: 37.5%; }
   .desk-5-8 { width: 62.5%; }
   .desk-7-8 { width: 87.5%; }
+  /*** spacing ***/
+  .desk-pad { padding-left: 10px; padding-right: 10px; }
+  .desk-pad-l { padding-left: 10px; }
+  .desk-pad-r { padding-right: 10px; }
+  .desk-pad-tb, desk-.pad-bt { padding-top: 10px; padding-bottom: 10px; }
+  .desk-pad-t { padding-top: 10px; }
+  .desk-pad-b { padding-bottom: 10px; }
+  .desk-pad-all { padding: 10px; }
+  /*** alignment ***/
+  .desk-align-l { text-align: left; }
+  .desk-align-r { text-align: right; }
+  .desk-align-c { text-align: center; }
+  .desk-align-col-l { float: left !important; }
+  .desk-align-col-r { float: right !important; }
+  .desk-align-col-c { float: none; margin-left: auto; margin-right: auto; }
 }
 /*** print widths ***/
 @media only print {
