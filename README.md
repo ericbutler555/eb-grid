@@ -135,7 +135,7 @@ eb-grid allows you to easily set any fractional width up to eighths. I stopped t
   <thead>
     <tr>
       <th>Class suffix</th>
-      <th>Optional stand-alone syntax(es) to replace "ph-" prefix:</th>
+      <th>Optional stand-alone class name(s)</th>
       <th>Width of element in layer</th>
     </tr>
   </thead>
@@ -295,7 +295,7 @@ Floats block elements (like `.col`s) right.
 
 Floats block elements (like `.col`s) in the center of the layer.
 
-**Note:** You can also add a breakpoint prefix to any of the above alignment classes, to set text or column alignment specifically for a certain breakpoint. For example, an element with `class="col tab-align-r tab-align-col-c desk-align-c desk-align-col-l"` would be centered in the layer with right-aligned text at 768px or wider, and would be floated left in the layer with centered text at 1200px or wider.
+**Note:** You can also **add a breakpoint prefix to any of the above alignment classes,** to set text or column alignment specifically for a certain breakpoint. For example, an element with `class="col half tab-align-r tab-align-col-c desk-align-c desk-align-col-l"` would be centered in the layer with right-aligned text at 768px or wider, and would be floated left in the layer with centered text at 1200px or wider.
 
 -----
 
@@ -333,13 +333,13 @@ Sets 10px of padding on the top side of the element. Leaves all other sides 0.
 
 Sets 10px of padding on the bottom side of the element. Leaves all other sides 0.
 
-**Note:** You can also add a breakpoint prefix to any of the above padding classes, to set padding specifically for a certain breakpoint. For example. an element with `class="col tab-pad-r lap-pad desk-pad-all"` would have no padding in phone-sized viewports, 10px of right padding at 768px or wider, 10px of left and right padding at 992px or wider, and 10px of left, right, top, and bottom padding at 1200px or wider.
+**Note:** You can also **add a breakpoint prefix to any of the above padding classes,** to set padding specifically for a certain breakpoint. For example. an element with `class="col tab-pad-r lap-pad desk-pad-all"` would have no padding in phone-sized viewports, 10px of right padding at 768px or wider, 10px of left and right padding at 992px or wider, and 10px of left, right, top, and bottom padding at 1200px or wider.
 
 -----
 
 **Margins**
 
-*This is still in development.* Currently, eb-grid offers flexibility when it comes to margins on the top and bottom of your layers and columns of content. By default there is a net-zero left and right margin on the `.col` and `.layer` classes, and no top and bottom margin.
+Currently, eb-grid offers flexibility when it comes to margins on the top and bottom of your layers and columns of content. By default there is a net-zero left and right margin on the `.col` and `.layer` classes, and no top and bottom margin.
 
 If you want to add top and/or bottom margin to an element, use one of the following:
 
