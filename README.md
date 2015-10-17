@@ -1,21 +1,23 @@
 # eb-grid
-Responsive grid framework that's laser focused and more flexible than Bootstrap or Foundation. Tiny footprint, no class collisions.
+Responsive grid system that's laser-focused and more flexible than Bootstrap or Foundation. Tiny footprint, no class collisions.
 
 **eb-grid is still a work in progress.**
 
 ### Why Bother? ###
 
-eb-grid is currently just 3.8 kb minified, and just 1.0 kb gzipped. So basically zero performance impact.
+Maybe you've been using Bootstrap or Foundation and realized that for one section your designer used an 8-column grid and for another a 5-column grid. And in one section, the elements all have padding, but in another, you need the content to come right up against the column edges. Or you want the rows to have some margin above and below them, but not the columns. Bootstrap and Foundation classes can't solve any of that for you. eb-grid can.
 
-It also **DOES NOT** collide with and can be used in the same project alongside Bootstrap and Foundation (as long as you're using them on separate elements).
+Also:
 
-Maybe you've been using Bootstrap or Foundation and realized that for one section your designer used an 8-column grid and for another a 5-column grid. And in one section, the elements all have padding, but in another, you need the content to come right up against the column edges. Or you want the rows to have some margin above and below them, but not the columns. Bootstrap and Foundation classes can't solve any of that for you.
+eb-grid is currently just **3.8 kb minified, and just 1.0 kb gzipped.** So there's basically zero performance impact.
+
+It also **does not interfere** with, and can be used in the same project alongside, other responsive grids like Bootstrap and Foundation (as long as you're using them on separate elements). So you can use eb-grid as a patch to handle just a certain section, or slowly phase it into a legacy code base.
 
 ## Basics ##
 
 eb-grid has the same strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
 
-The main difference of eb-grid is that instead of using a set 12- or 16-column grid structure, eb-grid **uses fractions in its class names** to allow you to set your own column counts for each "layer" of content. There's also a set of "helper"-style classes for optionally adding padding and margins to, really, any element in the framework: rows or columns or wrappers, on the fly.
+The main difference of eb-grid is that **instead of using a single, set 12- or 16-column grid structure, eb-grid uses fractions in its class names to allow you to set your own column counts for each "layer" of content.** There are also some "helper"-style classes for optionally adding padding and margins to, really, any element in the framework: rows or columns or wrappers, on the fly.
 
 >"Layers" are the same as Bootstrap's and Foundation's "rows". I wanted to be able to use eb-grid even if the project already uses Bootstrap or Foundation, so I've changed the class names to prevent any collisions.
 
@@ -27,7 +29,7 @@ The main difference of eb-grid is that instead of using a set 12- or 16-column g
       
         <div class="col half">
           This will span half the width of the layer, always.
-        </div><!--/.col-->
+        </div>
         
         <div class="col half tab-1-5 lap-3-7 desk-5-8">
           This div will span:
@@ -35,17 +37,17 @@ The main difference of eb-grid is that instead of using a set 12- or 16-column g
           - 1/5 the width between 768 and 991px,
           - 3/7 the width between 992 and 1199px, and
           - 5/8 the width of viewports 1200px or greater.
-        </div><!--/.col-->
+        </div>
         
         <div class="col full pad">
           This will span the entire width of the layer, always,
           and will have 10px of padding on its left and right sides.
-        </div><!--/.col-->
+        </div>
         
         <div class="col full pad-all">
           This will span the entire width of the layer, always,
           and will have 10px of padding on all 4 of its sides.
-        </div><!--/.col-->
+        </div>
         
       </div><!--/.layer-->
       
@@ -65,7 +67,7 @@ Like the `.row` class in Bootstrap, this wraps around all columns that should be
 
 `.col`
 
-Also like Bootstrap, but without the appended viewport-size and column-width settings. These are blocks of content that will be positioned side-by-side in your layout. **Note:** `.col` can be used on the element even if it is the only element in the `.layer` and will span full-width at all times.
+Also like Bootstrap, but without the appended viewport-size and column-width settings. These are blocks of content that will be positioned side-by-side in your layout. Note: `.col` can be used on the element even if it is the only element in the `.layer` and will span full-width at all times.
 
 ### Column widths, part 1: Breakpoints ###
 
@@ -80,7 +82,9 @@ There is also a print-specific class:
 
 * print
 
-These nicknames form the first part of any class name for a block of content, or `.col`. eb-grid takes a mobile-first approach, so the `.ph` prefix is actually optional. For example:
+These nicknames form the first part of any class name for a block of content, or `.col`.
+
+eb-grid takes a mobile-first approach, so the `.ph` prefix is actually optional. For example:
 
     <div class="col ph-1-4"></div>
 
@@ -90,7 +94,7 @@ is the same as:
 
 This alternate syntax might be easier to read and understand that the column should be 1/4 the width at all viewport sizes.
 
-These `.ph` and un-prefixed classes will apply to elements at any viewport size, unless another class prefixed by `tab-`, `lap-`, or `desk-` is added to the element (again, just like Bootstrap and Foundation).
+These `.ph` and un-prefixed classes will apply to elements at any viewport size, unless another class prefixed by `tab-`, `lap-`, or `desk-` is also added to the element (again, just like Bootstrap and Foundation).
 
 <table>
   <thead>
@@ -125,13 +129,13 @@ These `.ph` and un-prefixed classes will apply to elements at any viewport size,
 
 ### Column widths, part 2: Fractional widths ###
 
-Here is a table of all styled column widths, and the class names you can use for them:
+eb-grid allows you to easily set any fractional width up to eighths. I stopped there because I don't think any element should be narrower than that. Here is a table of all possible column widths, and the class names you can use for them:
 
 <table>
   <thead>
     <tr>
       <th>Class suffix</th>
-      <th>Alternate syntax to replace "ph" prefix:</th>
+      <th>Optional stand-alone syntax(es) to replace "ph-" prefix:</th>
       <th>Width of element in layer</th>
     </tr>
   </thead>
@@ -255,9 +259,11 @@ Here is a table of all styled column widths, and the class names you can use for
   </tbody>
 </table>
 
+So you put the breakpoint prefix together with the fractional width suffix, and you have your class. Use as many classes as you want to cover each breakpoint. Example: `<div class="col  ph-1-2  tab-2-3  lap-3-4  desk-4-5">`.
+
 ### Helper classes ###
 
-The only other thing eb-grid handles is spacing and alignment.
+The only other things eb-grid tries to handle are alignment and spacing of the layers and columns.
 
 **Alignment**
 
@@ -329,4 +335,4 @@ Sets 10px of margin on the bottom side of the element. Leaves all other margins 
 
 ## Support ##
 
-If you have questions or suggestions about eb-grid, create an issue. I'd like this to be as good as it can be.
+If you have questions or suggestions about eb-grid, create an issue. I'd like this to be truly useful to developers who just need a flexible responsive grid system without any broader scope.
