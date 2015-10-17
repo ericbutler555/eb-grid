@@ -17,7 +17,7 @@ It also **does not interfere** with, and can be used in the same project alongsi
 
 eb-grid has the same strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
 
-The main difference of eb-grid is that **instead of using a single, set 12- or 16-column grid structure, eb-grid uses fractions in its class names to allow you to set your own column counts for each "layer" of content.** There are also some "helper"-style classes for optionally adding padding and margins to, really, any element in the framework: rows or columns or wrappers, on the fly.
+The main difference of eb-grid is that **instead of using a single, set 12- or 16-column grid structure, eb-grid uses fractions in its class names to allow you to set different column counts for each "layer" of content.** There are also some "helper"-style classes for optionally adding padding and margins to, really, any element in the framework: rows or columns or wrappers, on the fly.
 
 >"Layers" are the same as Bootstrap's and Foundation's "rows". I wanted to be able to use eb-grid even if the project already uses Bootstrap or Foundation, so I've changed the class names to prevent any collisions.
 
