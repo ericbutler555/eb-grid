@@ -9,29 +9,37 @@ Maybe you've been using Bootstrap or Foundation and realized that for one sectio
 
 Also:
 
-eb-grid is currently just **5.2 kb minified, and just 1.2 kb gzipped.** So there's almost zero performance impact.
+eb-grid is currently just **5.5 kb minified, and just 1.27 kb gzipped.** So there's almost zero performance impact.
 
 It also **does not interfere** with, and can be used in the same project alongside, other responsive grids like Bootstrap and Foundation (as long as you're using them on separate elements). So you can use eb-grid as a patch to handle just a certain section, or slowly phase it into a legacy code base.
 
 ## Basics ##
 
-eb-grid has the same strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
+eb-grid has a similar (but simpler) strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
 
-The main difference of eb-grid is that **instead of using a single, set 12- or 16-column grid structure, eb-grid uses fractions in its class names to allow you to set different column counts for each "layer" of content.** There are also some "helper"-style classes for optionally adding padding and margins to, really, any element in the framework: rows or columns or wrappers, on the fly.
+The main difference of eb-grid is that **instead of using a single, set 12- or 16-column grid structure, eb-grid uses fractions in its class names to allow you to set different column counts for each "layer" of content.** There are also some "helper"-style classes for optionally adding padding and margins to, really, any element in the framework: rows (layers) or columns (cols), on the fly.
 
 >"Layers" are the same as Bootstrap's and Foundation's "rows". I wanted to be able to use eb-grid even if the project already uses Bootstrap or Foundation, so I've changed the class names to prevent any collisions.
 
 ### Basic Examples ###
 
-    <div class="wrap">
-    
       <div class="layer">
       
         <div class="col half">
           This will span half the width of the layer, always.
         </div>
         
-        <div class="col half tab-1-5 lap-3-7 desk-5-8">
+        <div class="col half">
+          This will span the other half of the width of the layer, always.
+        </div>
+        
+      </div><!--/.layer-->
+      
+      
+      
+      <div class="layer">
+        
+        <div class="col ph-1-2 tab-1-5 lap-3-7 desk-5-8">
           This div will span:
           - 1/2 the width of the layer for viewports less than 768px,
           - 1/5 the width between 768 and 991px,
@@ -50,16 +58,10 @@ The main difference of eb-grid is that **instead of using a single, set 12- or 1
         </div>
         
       </div><!--/.layer-->
-      
-    </div><!--/.wrap-->
 
 ## Classes ##
 
-### Wraps and layers (containers) ###
-
-`.wrap`
-
-Like the `.container` class in Bootstrap, this wraps around all layer (row) elements.
+### Layers and columns ###
 
 `.layer`
 
@@ -294,6 +296,10 @@ Floats block elements (like `.col`s) right.
 `.align-col-c`
 
 Floats block elements (like `.col`s) in the center of the layer.
+
+`.first`
+
+Use this class if the column should always be first (left-most) in a layer.
 
 **Note:** You can also **add a breakpoint prefix to any of the above alignment classes,** to set text or column alignment specifically for a certain breakpoint. For example, an element with `class="col half tab-align-r tab-align-col-c desk-align-c desk-align-col-l"` would be centered in the layer with right-aligned text at 768px or wider, and would be floated left in the layer with centered text at 1200px or wider.
 

@@ -1,9 +1,7 @@
 /*** globals ***/
 * { box-sizing: border-box; }
-/*** wraps and layers ***/
-.wrap { width: 100%; margin: 0 auto; padding: 0 10px; }
-.layer { margin-left: -10px; margin-right: -10px; }
-.wrap:after, .layer:after { content: ""; display: table; clear: both; }
+/*** layers and columns ***/
+.layer:after { content: ""; display: table; clear: both; }
 .col { width: 100%; float: left; overflow: auto; }
 /*** spacing ***/
 .pad { padding-left: 10px; padding-right: 10px; }
@@ -24,6 +22,8 @@
 .align-col-l { float: left !important; }
 .align-col-r { float: right !important; }
 .align-col-c { float: none; margin-left: auto; margin-right: auto; }
+.ph-first, .first { clear: left; }
+.ph-not-first, .not-first { clear: none; }
 /*** column widths ***/
 .ph-auto, .auto { width: auto; }
 .ph-full, .full { width: 100%; }
@@ -88,6 +88,8 @@
   .tab-align-col-l { float: left !important; }
   .tab-align-col-r { float: right !important; }
   .tab-align-col-c { float: none; margin-left: auto; margin-right: auto; }
+  .tab-first { clear: left; }
+  .tab-not-first { clear: none; }
 }
 /*** laptop widths ***/
 @media only screen and (min-width: 992px) {
@@ -129,6 +131,8 @@
   .lap-align-col-l { float: left !important; }
   .lap-align-col-r { float: right !important; }
   .lap-align-col-c { float: none; margin-left: auto; margin-right: auto; }
+  .lap-first { clear: left; }
+  .lap-not-first { clear: none; }
 }
 /*** desktop widths ***/
 @media only screen and (min-width: 1200px) {
@@ -170,6 +174,8 @@
   .desk-align-col-l { float: left !important; }
   .desk-align-col-r { float: right !important; }
   .desk-align-col-c { float: none; margin-left: auto; margin-right: auto; }
+  .desk-first { clear: left; }
+  .desk-not-first { clear: none; }
 }
 /*** print widths ***/
 @media only print {
@@ -196,4 +202,6 @@
   .print-3-8 { width: 37.5%; }
   .print-5-8 { width: 62.5%; }
   .print-7-8 { width: 87.5%; }
+  .print-first { clear: left; }
+  .print-not-first { clear: none; }
 }
