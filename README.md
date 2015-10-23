@@ -303,35 +303,35 @@ Set the alignment of text and other inline-displayed content using one of the fo
   </thead>
   <tbody>
     <tr>
-      <td>`.align-l`</td>
+      <td>.align-l</td>
       <td>Aligns content left.</td>
     </tr>
     <tr>
-      <td>`.align-r`</td>
+      <td>.align-r</td>
       <td>Aligns content right.</td>
     </tr>
     <tr>
-      <td>`.align-c`</td>
+      <td>.align-c</td>
       <td>Aligns content center.</td>
     </tr>
     <tr>
-      <td>`.align-col-l`</td>
+      <td>.align-col-l</td>
       <td>Floats block elements (like `.col`s) left.</td>
     </tr>
     <tr>
-      <td>`.align-col-r`</td>
+      <td>.align-col-r</td>
       <td>Floats block elements (like `.col`s) right.</td>
     </tr>
     <tr>
-      <td>`.align-col-c`</td>
+      <td>.align-col-c</td>
       <td>Floats block elements (like `.col`s) in the center of a layer.</td>
     </tr>
     <tr>
-      <td>`.first`</td>
+      <td>.first</td>
       <td>Use this class if the column should always be first (left-most) in a layer.</td>
     </tr>
     <tr>
-      <td>`.not-first`</td>
+      <td>.not-first</td>
       <td>Use this class to undo the `.first` class at any breakpoint.</td>
     </tr>
   </tbody>
@@ -356,31 +356,31 @@ If you want to add padding to an element, use one of the following:
   </thead>
   <tbody>
     <tr>
-      <td>`.pad`</td>
+      <td>.pad</td>
       <td>Sets 10px of padding on the left and right sides of the element. Does NOT set padding on the top and bottom (use `.pad-v` or `.pad-all` for that).</td>
     </tr>
     <tr>
-      <td>`.pad-all`</td>
+      <td>.pad-all</td>
       <td>Sets 10px of padding on all sides of the element.</td>
     </tr>
     <tr>
-      <td>`.pad-v`</td>
+      <td>.pad-v</td>
       <td>Sets 10px of padding on the top and bottom sides of the element. Does NOT set padding on the left and right sides (use `.pad` or `.pad-all` for that).</td>
     </tr>
     <tr>
-      <td>`.pad-l`</td>
+      <td>.pad-l</td>
       <td>Sets 10px of padding on the left side of the element. Leaves all other sides 0.</td>
     </tr>
     <tr>
-      <td>`.pad-r`</td>
+      <td>.pad-r</td>
       <td>Sets 10px of padding on the right side of the element. Leaves all other sides 0.</td>
     </tr>
     <tr>
-      <td>`.pad-t`</td>
+      <td>.pad-t</td>
       <td>Sets 10px of padding on the top side of the element. Leaves all other sides 0.</td>
     </tr>
     <tr>
-      <td>`.pad-b`</td>
+      <td>.pad-b</td>
       <td>Sets 10px of padding on the bottom side of the element. Leaves all other sides 0.</td>
     </tr>
   </tbody>
@@ -405,15 +405,15 @@ If you want to add top and/or bottom margin to an element, use one of the follow
   </thead>
   <tbody>
     <tr>
-      <td>`.bump`</td>
+      <td>.bump</td>
       <td>Sets 10px of margin on the top and bottom sides of the element. Does NOT change the margins on the left and right sides.</td>
     </tr>
     <tr>
-      <td>`.bump-t`</td>
+      <td>.bump-t</td>
       <td>Sets 10px of margin on the top side of the element. Leaves all other margins as-is.</td>
     </tr>
     <tr>
-      <td>`.bump-b`</td>
+      <td>.bump-b</td>
       <td>Sets 10px of margin on the bottom side of the element. Leaves all other margins as-is.</td>
     </tr>
   </tbody>
