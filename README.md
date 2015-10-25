@@ -1,142 +1,57 @@
 # eb-grid
-Responsive grid library that's laser-focused and more flexible than Bootstrap or Foundation. Tiny footprint, no class collisions.
+Responsive-grid CSS library that's laser-focused and more flexible than Bootstrap or Foundation. Tiny footprint, no class collisions.
 
-**eb-grid is still a work in progress.**
+*eb-grid is still a work in progress.*
 
-### Why Bother? ###
+#### Why Bother? ####
 
-Maybe you've been using Bootstrap or Foundation and realized that for one section your designer used an 8-column grid and for another a 5-column grid. And in one section, the elements all have padding, but in another, you need the content to come right up against the column edges. Or you want the rows to have some margin above and below them, but not the columns. Bootstrap and Foundation classes can't solve any of that for you. eb-grid can.
+eb-grid gives you greater flexibility than other responsive frameworks in two ways:
 
-Also:
+**More breakpoints:** eb-grid has 6 distinct breakpoints so you can target phones, phablets, tablets, laptops, desktops, and widescreen viewports.
 
-eb-grid is currently just **4.8 kb minified, and just 1.3 kb gzipped.** So there's almost zero performance impact.
+**Variable column totals:** eb-grid uses fraction-based class names so you can change the total number of "base" columns in your grid for every row of content on your page.
 
-It also **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation (as long as you're using them on separate elements). So you can use eb-grid as a patch to handle just a certain section, or slowly phase it into a legacy code base.
+**Tiny footprint:** eb-grid is currently just **7 kb minified, and just 1.5 kb gzipped.** So there's basically zero performance impact.
+
+**No class collisions:** eb-grid **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation (as long as you're using them on separate elements). So you can use eb-grid as a patch to handle just a certain section, or slowly phase it into a legacy code base, without creating problems in an existing layout.
+
 
 ## Basics ##
 
 eb-grid has a similar (but simpler) strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
 
-The main difference of eb-grid is that **instead of using a single, global 12- or 16-column grid structure, eb-grid uses fractions in its class names that allow you to set different column counts for every "layer" of content.** There are also some "helper"-style classes for optionally adding alignment, padding, and/or margins to, really, any element on the fly.
+The main difference is that **instead of using a single, global 12- or 16-column grid structure, eb-grid uses fractions in its class names that allow you to set different total column counts for every row of content.**
 
->"Layers" are the same as Bootstrap's and Foundation's "rows". I wanted to be able to use eb-grid even if the project already uses Bootstrap or Foundation, so I've changed the class names to prevent any collisions.
+>Rows of content in eb-grid are given a class name of ".layer" so that developers can use eb-grid in projects without interfering with Bootstrap and Foundation's ".row" class.
 
 ### Basic Examples ###
 
-      <div class="layer">
-      
-        <div class="col half">
-          This will span half the width of the layer, at any viewport size.
-        </div>
-        
-        <div class="col half">
-          This will span the other half of the width of the layer, at any viewport size.
-        </div>
-        
-      </div><!--/.layer-->
-      
-      
-      
-      <div class="layer">
-      
-        <div class="col lap-1-3">
-          This will span the entire width of the layer up to 991px,
-          and 1/3 of the layer at or above 992px.
-        </div>
-        
-        <div class="col lap-1-3">
-          This will span the entire width of the layer up to 991px,
-          and 1/3 of the layer at or above 992px.
-        </div>
-        
-        <div class="col lap-1-3">
-          This will span the entire width of the layer up to 991px,
-          and 1/3 of the layer at or above 992px.
-        </div>
-        
-      </div><!--/.layer-->
-      
-      
-      
-      <div class="layer">
-        
-        <div class="col ph-1-2 tab-1-5 lap-3-7 desk-5-8">
-          This div will span:
-          - 1/2 the width of the layer for viewports less than 768px,
-          - 1/5 the width between 768 and 991px,
-          - 3/7 the width between 992 and 1199px, and
-          - 5/8 the width of viewports 1200px or greater.
-        </div>
-        
-        <div class="col full pad">
-          This will span the entire width of the layer, at any viewport size,
-          and will have 10px of padding on its left and right sides.
-        </div>
-        
-        <div class="col full pad-all">
-          This will span the entire width of the layer, at any viewport size,
-          and will have 10px of padding on all 4 of its sides.
-        </div>
-        
-      </div><!--/.layer-->
+    <div class="layer">
 
-## Classes ##
+      <div class="col tab-1-2">
+        This div will span the full width of the layer at viewports under 768px,
+        and will span 1/2 the width of the layer at viewports 768px and above.
+      </div>
 
-### Layers and columns ###
+      <div class="col tab-2-5">
+        This div will span the full width of the layer at viewports under 768px,
+        and will span 2/5 the width of the layer at viewports 768px and above.
+      </div>
 
-<table width="100%">
-  <thead>
-    <tr>
-      <th width="15%">Class name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>.layer</td>
-      <td>Like the <code>.row</code> class in Bootstrap/Foundation, this wraps around all columns that should ever be positioned side-by-side, even if that's only at a certain viewport size.</td>
-    </tr>
-    <tr>
-      <td>.col</td>
-      <td>Also like Bootstrap, but without the appended viewport-size and column-width settings. These are blocks of content that will be positioned side-by-side in a layer. Note: <code>.col</code> can be used on an element even if it is the only element in the </code>.layer</code>, and will span full-width by default.</td>
-    </tr>
-  </tbody>
-</table>
+    </div>
 
-### Column widths, part 1: Breakpoints ###
+Each row of content is created with a div with class `.layer`. Inside it, divs with class `.col` form columns of side-by-side content.
 
-There are 4 breakpoints that eb-grid recognizes:
+Additional classes can be added to `.col`s to set their widths at certain breakpoints. In this example, `.tab-` signifies that the rule will apply to viewports 992px and above. The `-1-2` and `-2-5` portions of the class names signify that at this viewport width, the divs should be 1/2 and 2/5 the width of their parent `.layer` div, respectively.
 
-* `.ph` (short for "phone")
-* `.tab` (short for "tablet")
-* `.lap` (short for "laptop")
-* `.desk` (short for "desktop")
+Column divs can have as many extra classes as you like. Here's an (extreme) example:
 
-There is also a print-specific class in the `eb-grid-print.css` add-on file:
+    <div class="col ph-1-2 phab-1-3 tab-1-4 lap-1-5 desk-1-6 wide-1-7">
+    
+This div will span 1/2 of its parent `.layer` div's width by default, 1/3 its width when the viewport is over 480px wide, 1/4 its width when it's over 768px wide, 1/5 its width when it's over 992px wide, 1/6 its width when it's over 1200px wide, and 1/7 its width when it's over 1600px wide. You probably won't need to set a different fractional width at every single breakpoint, but whichever ones you do need to, you can.
 
-* `.print`
 
-**New in v0.2:** There is a new class prefix for small phones (0-480px) in the `eb-grid-tiny.css` add-on file:
-
-* `.tiny`
-
-These nicknames form the first part of any class name for a block of content, or `.col`.
-
-eb-grid takes a mobile-first approach, so the `.ph` prefix is actually optional. For example:
-
-    <div class="col ph-1-4"></div>
-
-is the same as:
-
-    <div class="col one-fourth"></div>
-
-This alternate syntax might be easier to read and understand that the column should be 1/4 the width at all viewport sizes.
-
-These `.ph` and un-prefixed classes will apply to elements at any viewport size, unless another class prefixed by `.tab-`, `.lap-`, or `.desk-` is also added to the element (again, just like Bootstrap and Foundation).
-
-#### Create a Class Name ####
-
-Here's the idea: **Breakpoint prefix + Fractional width suffix = Class name.** Use the 2 tables below to get the breakpoint prefix and fractional width you want for each of your blocks of content.
+## Breakpoints ##
 
 <table width="100%">
   <thead>
@@ -148,7 +63,11 @@ Here's the idea: **Breakpoint prefix + Fractional width suffix = Class name.** U
   <tbody>
     <tr>
       <td>.ph-</td>
-      <td>0 - 767px</td>
+      <td>0 - 480px</td>
+    </tr>
+    <tr>
+      <td>.phab-</td>
+      <td>481px - 767px</td>
     </tr>
     <tr>
       <td>.tab-</td>
@@ -160,22 +79,25 @@ Here's the idea: **Breakpoint prefix + Fractional width suffix = Class name.** U
     </tr>
     <tr>
       <td>.desk-</td>
-      <td>1200px +</td>
+      <td>1200px - 1599px</td>
+    </tr>
+    <tr>
+      <td>.wide-</td>
+      <td>1600px +</td>
     </tr>
     <tr>
       <td>.print-</td>
       <td>Printed pages, regardless of size</td>
     </tr>
-    <tr>
-      <td>.tiny-</td>
-      <td>0-480px (can use as override of <code>.ph-</code> classes)</td>
-    </tr>
   </tbody>
 </table>
 
-### Column widths, part 2: Fractional widths ###
+Note: Since most people probably won't use the `.print-` classes, they can be found in the separate `eb-grid-print.css` file.
 
-eb-grid allows you to easily set any fractional width on an element, up to eighths. I stopped there because I don't think any element should be narrower than that. Here is a table of all possible column widths, and the class names you can use for them:
+
+## Fractional widths ##
+
+eb-grid allows you to easily set any fractional width on an element, up to eighths. It stops there because an element really shouldn't need to be narrower than that. Here is a table of all possible column widths, and the class names you can use for them:
 
 <table width="100%">
   <thead>
@@ -305,17 +227,51 @@ eb-grid allows you to easily set any fractional width on an element, up to eight
   </tbody>
 </table>
 
-So **breakpoint prefix + fractional width suffix = class name.** Or use the stand-alone class name as a replacement for `.ph-[#]-[#]`. Use as many classes as you want to handle the element's width at each breakpoint. Example: `<div class="col ph-1-2 tab-2-3 lap-3-4 desk-4-5">`.
+Notice the "optional stand-alone class names" in the table above? Those are optional ways of writing a class name for the `.ph-` breakpoint. Since eb-grid takes a mobile-first approach, the `.ph-` breakpoint is the default breakpoint, so if you only apply a width at the `.ph-` level, it will apply to the `.col` at every viewport size. For example:
 
-### Helper classes ###
+    <div class="col ph-1-2"></div>
+    <div class="col ph-1-4"></div>
 
-The only other things eb-grid tries to handle are hiding, alignment and spacing on the layers and columns.
+is the same as:
 
------
+    <div class="col half"></div>
+    <div class="col one-fourth"></div>
 
-**Alignment**
+This alternate syntax exists just in case you find it easier to understand that these columns will be 1/2 and 1/4 of the `.layer`'s width at all viewport sizes. You can write it either way; they do the same thing.
 
-Set the alignment of text and other inline-displayed content using one of the following classes:
+
+## Helper classes ##
+
+The goal of eb-grid is to be as lean as possible, so the only other things eb-grid tries to handle are visibility, alignment and spacing.
+
+#### Visibility ####
+
+Sometimes you need a column to show up or go away at a certain breakpoint. Here's how to do that.
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="15%">Class name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.hide</td>
+      <td>Hides the element by setting it to <code>display: none</code>.</td>
+    </tr>
+    <tr>
+      <td>.show</td>
+      <td>Shows the element by setting it to <code>display: block</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+**Note:** Add a breakpoint prefix to either of the above visibility classes in order to hide or show a `.col` dynamically at a certain breakpoint. For example, `class="col ph-hide lap-show"` will hide the element on viewports up to 991px, but show it on viewports wider than that.
+
+#### Alignment ####
+
+You can set the alignment of text and images, or even block elements like `.col`s, with the following classes:
 
 <table width="100%">
   <thead>
@@ -327,15 +283,15 @@ Set the alignment of text and other inline-displayed content using one of the fo
   <tbody>
     <tr>
       <td>.align-l</td>
-      <td>Aligns content left.</td>
+      <td>Aligns "inline" content (like text and images) left.</td>
     </tr>
     <tr>
       <td>.align-r</td>
-      <td>Aligns content right.</td>
+      <td>Aligns "inline" content (like text and images) right.</td>
     </tr>
     <tr>
       <td>.align-c</td>
-      <td>Aligns content center.</td>
+      <td>Aligns "inline" content (like text and images) center.</td>
     </tr>
     <tr>
       <td>.align-col-l</td>
@@ -351,24 +307,20 @@ Set the alignment of text and other inline-displayed content using one of the fo
     </tr>
     <tr>
       <td>.first</td>
-      <td>Use this class if the column should always be first (left-most) in a layer.</td>
+      <td>Use this class if the element should always be first (all the way left) in a layer.</td>
     </tr>
     <tr>
       <td>.not-first</td>
-      <td>Use this class to undo the <code>.first</code> class at any breakpoint.</td>
+      <td>Use this class to undo the <code>.first</code> class at any subsequent breakpoint.</td>
     </tr>
   </tbody>
 </table>
 
-**Note:** You can also **add a breakpoint prefix to any of the above alignment classes,** to set text or column alignment specifically for a certain breakpoint. For example, an (insane) element with `class="col half tab-align-r tab-align-col-c desk-align-c desk-align-col-l"` would be centered in the layer with right-aligned text at 768px or wider, and would be floated left in the layer with centered text at 1200px or wider.
+**Note:** Add a breakpoint prefix to any of the above classes to set the element's alignment dynamically at a certain breakpoint. For example, text in a div with `class="col desk-align-r"` would be left-aligned on viewports up to 1199px, but right-aligned on viewports wider than that.
 
------
+#### Padding ####
 
-**Padding**
-
-eb-grid offers flexibility when it comes to padding on your layers and columns of content. By default there is no padding on the `.col` and `.layer` classes, so as not to interfere with any existing/intended design you have.
-
-If you want to add padding to an element, use one of the following:
+By default, there is no padding applied to `.col` and `.layer` elements in eb-grid. This gives you more flexibility and prevents interfering with any existing or intended layout you have. If you want to add padding to an element, use one of the following:
 
 <table width="100%">
   <thead>
@@ -392,32 +344,28 @@ If you want to add padding to an element, use one of the following:
     </tr>
     <tr>
       <td>.pad-l</td>
-      <td>Sets 10px of padding on the left side of the element. Leaves all other sides 0.</td>
+      <td>Sets 10px of padding on the left side of the element. Leaves all other sides as-is (0 by default).</td>
     </tr>
     <tr>
       <td>.pad-r</td>
-      <td>Sets 10px of padding on the right side of the element. Leaves all other sides 0.</td>
+      <td>Sets 10px of padding on the right side of the element. Leaves all other sides as-is (0 by default).</td>
     </tr>
     <tr>
       <td>.pad-t</td>
-      <td>Sets 10px of padding on the top side of the element. Leaves all other sides 0.</td>
+      <td>Sets 10px of padding on the top side of the element. Leaves all other sides as-is (0 by default).</td>
     </tr>
     <tr>
       <td>.pad-b</td>
-      <td>Sets 10px of padding on the bottom side of the element. Leaves all other sides 0.</td>
+      <td>Sets 10px of padding on the bottom side of the element. Leaves all other sides as-is (0 by default).</td>
     </tr>
   </tbody>
 </table>
 
-**Note:** You can also **add a breakpoint prefix to any of the above padding classes,** to set padding specifically for a certain breakpoint. For example. an (insane) element with `class="col tab-pad-r lap-pad desk-pad-all"` would have no padding in phone-sized viewports, 10px of right padding at 768px or wider, 10px of left and right padding at 992px or wider, and 10px of left, right, top, and bottom padding at 1200px or wider.
+**Note:** Add a breakpoint prefix to any of the above classes to set padding dynamically at a certain breakpoint. For example, an element with `class="col pad-v tab-pad-all"` would have top and bottom padding on viewports up to 767px, and would add left and right padding to itself on viewports wider than that.
 
------
+#### Margins ####
 
-**Margins**
-
-Currently, eb-grid offers flexibility when it comes to margins on the top and bottom of your layers and columns of content. By default there are no margins on the `.col` and `.layer` classes, so as not to interfere with any existing/intended design you have.
-
-If you want to add top and/or bottom margin to an element, use one of the following:
+By default, there are no margins applied to `.col` and `.layer` elements in eb-grid. If you want to add top and/or bottom margin to an element, use one of the following:
 
 <table width="100%">
   <thead>
@@ -429,45 +377,19 @@ If you want to add top and/or bottom margin to an element, use one of the follow
   <tbody>
     <tr>
       <td>.bump</td>
-      <td>Sets 10px of margin on the top and bottom sides of the element. Does NOT change the margins on the left and right sides.</td>
+      <td>Sets 10px of margin on the top and bottom sides of the element. Does NOT set margins on the left and right sides.</td>
     </tr>
     <tr>
       <td>.bump-t</td>
-      <td>Sets 10px of margin on the top side of the element. Leaves all other margins as-is.</td>
+      <td>Sets 10px of margin on the top side of the element. Leaves all other margins as-is (0 by default).</td>
     </tr>
     <tr>
       <td>.bump-b</td>
-      <td>Sets 10px of margin on the bottom side of the element. Leaves all other margins as-is.</td>
+      <td>Sets 10px of margin on the bottom side of the element. Leaves all other margins as-is (0 by default).</td>
     </tr>
   </tbody>
 </table>
 
------
-
-**Show/Hide**
-
-Sometimes you need a column to just go away at a certain breakpoint, or only show up at a certain breakpoint. eb-grid allows you to do that.
-
-<table width="100%">
-  <thead>
-    <tr>
-      <th width="15%">Class name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>.hide</td>
-      <td>Hides the element by setting it to <code>display:none</code>.</td>
-    </tr>
-    <tr>
-      <td>.show</td>
-      <td>Shows the element by setting it to <code>display:block</code>.</td>
-    </tr>
-  </tbody>
-</table>
-
-**Note:** You can also show or hide an element only for a certain breakpoint; just add one of the breakpoint prefixes to the class name. Example: `class="ph-hide lap-show desk-hide"` will hide the element up to 991px, show it between 992px and 1199px, and hide it again at 1200px or wider.
 
 ## Support ##
 
