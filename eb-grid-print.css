@@ -3,22 +3,22 @@
   .print-auto { width: auto; }
   .print-full { width: 100%; }
   .print-half, .print-1-2 { width: 50%; }
-  .print-1-3 { width: 33.33333333%; }
-  .print-2-3 { width: 66.66666667%; }
+  .print-1-3 { width: 33.3333%; }
+  .print-2-3 { width: 66.6666%; }
   .print-1-4 { width: 25%; }
   .print-3-4 { width: 75%; }
   .print-1-5 { width: 20%; }
   .print-2-5 { width: 40%; }
   .print-3-5 { width: 60%; }
   .print-4-5 { width: 80%; }
-  .print-1-6 { width: 16.66666667%; }
-  .print-5-6 { width: 83.33333333%; }
-  .print-1-7 { width: 14.28571428%; }
-  .print-2-7 { width: 28.57142857%; }
-  .print-3-7 { width: 42.85714285%; }
-  .print-4-7 { width: 57.14285714%; }
-  .print-5-7 { width: 71.42857142%; }
-  .print-6-7 { width: 85.71428571%; }
+  .print-1-6 { width: 16.6666%; }
+  .print-5-6 { width: 83.3333%; }
+  .print-1-7 { width: 14.2857%; }
+  .print-2-7 { width: 28.5714%; }
+  .print-3-7 { width: 42.8571%; }
+  .print-4-7 { width: 57.1428%; }
+  .print-5-7 { width: 71.4285%; }
+  .print-6-7 { width: 85.7142%; }
   .print-1-8 { width: 12.5%; }
   .print-3-8 { width: 37.5%; }
   .print-5-8 { width: 62.5%; }
@@ -27,9 +27,9 @@
   .print-pad { padding-left: 10px; padding-right: 10px; }
   .print-pad-l { padding-left: 10px; }
   .print-pad-r { padding-right: 10px; }
-  .print-pad-tb, print-.pad-bt { padding-top: 10px; padding-bottom: 10px; }
   .print-pad-t { padding-top: 10px; }
   .print-pad-b { padding-bottom: 10px; }
+  .print-pad-v { padding-top: 10px; padding-bottom: 10px; }
   .print-pad-all { padding: 10px; }
   /*** alignment ***/
   .print-align-l { text-align: left; }
@@ -41,4 +41,7 @@
   /*** clearing ***/
   .print-first { clear: left; }
   .print-not-first { clear: none; }
+  /*** visibility ***/
+  .print-hide { display: none; }
+  .print-show { display: block; }
 }

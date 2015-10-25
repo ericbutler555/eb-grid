@@ -45,6 +45,9 @@
 /*** clearing ***/
 .ph-first, .first { clear: left; }
 .ph-not-first, .not-first { clear: none; }
+/*** visibility ***/
+.ph-hide, .hide { display: none; }
+.ph-show, .show { display: block; }
 /*** TO-DO: Figure out how to add gutter (side) margins to columns. ***/
 .bump, .bump-v { margin-top: 10px; margin-bottom: 10px; }
 .bump-t { margin-top: 10px; }
@@ -93,6 +96,9 @@
   /*** clearing ***/
   .tab-first { clear: left; }
   .tab-not-first { clear: none; }
+  /*** visibility ***/
+  .tab-hide { display: none; }
+  .tab-show { display: block; }
 }
 
 /*** for laptop ***/
@@ -138,6 +144,9 @@
   /*** clearing ***/
   .lap-first { clear: left; }
   .lap-not-first { clear: none; }
+  /*** visibility ***/
+  .lap-hide { display: none; }
+  .lap-show { display: block; }
 }
 
 /*** for desktop ***/
@@ -183,4 +192,7 @@
   /*** clearing ***/
   .desk-first { clear: left; }
   .desk-not-first { clear: none; }
+  /*** visibility ***/
+  .desk-hide { display: none; }
+  .desk-show { display: block; }
 }

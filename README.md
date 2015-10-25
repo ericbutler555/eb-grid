@@ -9,7 +9,7 @@ Maybe you've been using Bootstrap or Foundation and realized that for one sectio
 
 Also:
 
-eb-grid is currently just **4.5 kb minified, and just 1.2 kb gzipped.** So there's almost zero performance impact.
+eb-grid is currently just **4.8 kb minified, and just 1.3 kb gzipped.** So there's almost zero performance impact.
 
 It also **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation (as long as you're using them on separate elements). So you can use eb-grid as a patch to handle just a certain section, or slowly phase it into a legacy code base.
 
@@ -282,7 +282,7 @@ eb-grid allows you to easily set any fractional width on an element, up to eight
   </tbody>
 </table>
 
-So **breakpoint prefix + fractional width suffix = class.** Use as many classes as you want to handle the element's width at each breakpoint. Example: `<div class="col ph-1-2 tab-2-3 lap-3-4 desk-4-5">`.
+So **breakpoint prefix + fractional width suffix = class name.** Use as many classes as you want to handle the element's width at each breakpoint. Example: `<div class="col ph-1-2 tab-2-3 lap-3-4 desk-4-5">`.
 
 ### Helper classes ###
 
@@ -297,7 +297,7 @@ Set the alignment of text and other inline-displayed content using one of the fo
 <table>
   <thead>
     <tr>
-      <th>Class Name</th>
+      <th>Class name</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -316,15 +316,15 @@ Set the alignment of text and other inline-displayed content using one of the fo
     </tr>
     <tr>
       <td>.align-col-l</td>
-      <td>Floats block elements (like `.col`s) left.</td>
+      <td>Floats block elements (like **.col**s) left.</td>
     </tr>
     <tr>
       <td>.align-col-r</td>
-      <td>Floats block elements (like `.col`s) right.</td>
+      <td>Floats block elements (like **.col**s) right.</td>
     </tr>
     <tr>
       <td>.align-col-c</td>
-      <td>Floats block elements (like `.col`s) in the center of a layer.</td>
+      <td>Floats block elements (like **.col**s) in the center of a layer.</td>
     </tr>
     <tr>
       <td>.first</td>
@@ -332,7 +332,7 @@ Set the alignment of text and other inline-displayed content using one of the fo
     </tr>
     <tr>
       <td>.not-first</td>
-      <td>Use this class to undo the `.first` class at any breakpoint.</td>
+      <td>Use this class to undo the **.first** class at any breakpoint.</td>
     </tr>
   </tbody>
 </table>
@@ -350,14 +350,14 @@ If you want to add padding to an element, use one of the following:
 <table>
   <thead>
     <tr>
-      <th>Class Name</th>
+      <th>Class name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>.pad</td>
-      <td>Sets 10px of padding on the left and right sides of the element. Does NOT set padding on the top and bottom (use `.pad-v` or `.pad-all` for that).</td>
+      <td>Sets 10px of padding on the left and right sides of the element. Does NOT set padding on the top and bottom (use **.pad-v** or **.pad-all** for that).</td>
     </tr>
     <tr>
       <td>.pad-all</td>
@@ -365,7 +365,7 @@ If you want to add padding to an element, use one of the following:
     </tr>
     <tr>
       <td>.pad-v</td>
-      <td>Sets 10px of padding on the top and bottom sides of the element. Does NOT set padding on the left and right sides (use `.pad` or `.pad-all` for that).</td>
+      <td>Sets 10px of padding on the top and bottom sides of the element. Does NOT set padding on the left and right sides (use **.pad** or **.pad-all** for that).</td>
     </tr>
     <tr>
       <td>.pad-l</td>
@@ -399,7 +399,7 @@ If you want to add top and/or bottom margin to an element, use one of the follow
 <table>
   <thead>
     <tr>
-      <th>Class Name</th>
+      <th>Class name</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -418,6 +418,33 @@ If you want to add top and/or bottom margin to an element, use one of the follow
     </tr>
   </tbody>
 </table>
+
+-----
+
+**Show/Hide**
+
+Sometimes you need a column to just go away at a certain breakpoint, or only show up at a certain breakpoint. eb-grid allows you to do that.
+
+<table>
+  <thead>
+    <tr>
+      <th>Class name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.hide</td>
+      <td>Hides the element by setting it to **display:none**.</td>
+    </tr>
+    <tr>
+      <td>.show</td>
+      <td>Shows the element by setting it to **display:block**.</td>
+    </tr>
+  </tbody>
+</table>
+
+To show or hide an element only for a certain breakpoint, add one of the breakpoint prefixes to the class name. Example: `class="ph-hide lap-show desk-hide"` will hide the element up to 991px, show it between 992px and 1199px, and hide it again at 1200px or wider.
 
 ## Support ##
 
