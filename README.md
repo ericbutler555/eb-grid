@@ -11,7 +11,7 @@ eb-grid gives you greater flexibility than other responsive frameworks in two wa
 
 **Variable column totals:** eb-grid uses fraction-based class names so you can change the total number of "base" columns in your grid for every row of content on your page.
 
-**Tiny footprint:** eb-grid is currently just **7 kb minified, and just 1.5 kb gzipped.** So there's basically zero performance impact.
+**Tiny footprint:** eb-grid is currently just **6.9 kb minified, and just 1.5 kb gzipped.** So there's basically zero performance impact.
 
 **No class collisions:** eb-grid **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation (as long as you're using them on separate elements). So you can use eb-grid as a patch to handle just a certain section, or slowly phase it into a legacy code base, without creating problems in an existing layout.
 
