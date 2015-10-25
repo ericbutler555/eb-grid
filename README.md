@@ -84,13 +84,24 @@ The main difference of eb-grid is that **instead of using a single, global 12- o
 
 ### Layers and columns ###
 
-`.layer`
-
-Like the `.row` class in Bootstrap/Foundation, this wraps around all columns that should ever be positioned side-by-side, even if that's only at a certain viewport size.
-
-`.col`
-
-Also like Bootstrap, but without the appended viewport-size and column-width settings. These are blocks of content that will be positioned side-by-side in a layer. Note: `.col` can be used on an element even if it is the only element in the `.layer` and will span full-width by default.
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="15%">Class name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.layer</td>
+      <td>Like the <code>.row</code> class in Bootstrap/Foundation, this wraps around all columns that should ever be positioned side-by-side, even if that's only at a certain viewport size.</td>
+    </tr>
+    <tr>
+      <td>.col</td>
+      <td>Also like Bootstrap, but without the appended viewport-size and column-width settings. These are blocks of content that will be positioned side-by-side in a layer. Note: <code>.col</code> can be used on an element even if it is the only element in the </code>.layer</code>, and will span full-width by default.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Column widths, part 1: Breakpoints ###
 
@@ -157,7 +168,7 @@ Here's the idea: **Breakpoint prefix + Fractional width suffix = Class name.** U
     </tr>
     <tr>
       <td>.tiny-</td>
-      <td>0-480px (can use as override of .ph- classes)</td>
+      <td>0-480px (can use as override of <code>.ph-</code> classes)</td>
     </tr>
   </tbody>
 </table>
@@ -177,124 +188,124 @@ eb-grid allows you to easily set any fractional width on an element, up to eight
   <tbody>
     <tr>
       <td>-full</td>
-      <td>full</td>
+      <td>.full</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>-auto</td>
-      <td>auto</td>
+      <td>.auto</td>
       <td>its auto/default size</td>
     </tr>
     <tr>
       <td>-1-2</td>
-      <td>half, one-half</td>
+      <td>.half, .one-half</td>
       <td>50%</td>
     </tr>
     <tr>
       <td>-1-3</td>
-      <td>third, one-third</td>
+      <td>.third, .one-third</td>
       <td>33.3333%</td>
     </tr>
     <tr>
       <td>-2-3</td>
-      <td>two-thirds</td>
+      <td>.two-thirds</td>
       <td>66.6666%</td>
     </tr>
     
     <tr>
       <td>-1-4</td>
-      <td>fourth, one-fourth</td>
+      <td>.fourth, .one-fourth</td>
       <td>25%</td>
     </tr>
     <tr>
       <td>-3-4</td>
-      <td>three-fourths</td>
+      <td>.three-fourths</td>
       <td>75%</td>
     </tr>
     <tr>
       <td>-1-5</td>
-      <td>fifth, one-fifth</td>
+      <td>.fifth, .one-fifth</td>
       <td>20%</td>
     </tr>
     <tr>
       <td>-2-5</td>
-      <td>two-fifths</td>
+      <td>.two-fifths</td>
       <td>40%</td>
     </tr>
     <tr>
       <td>-3-5</td>
-      <td>three-fifths</td>
+      <td>.three-fifths</td>
       <td>60%</td>
     </tr>
     <tr>
       <td>-4-5</td>
-      <td>four-fifths</td>
+      <td>.four-fifths</td>
       <td>80%</td>
     </tr>
     <tr>
       <td>-1-6</td>
-      <td>sixth, one-sixth</td>
+      <td>.sixth, .one-sixth</td>
       <td>16.6666%</td>
     </tr>
     <tr>
       <td>-5-6</td>
-      <td>five-sixths</td>
+      <td>.five-sixths</td>
       <td>83.3333%</td>
     </tr>
     <tr>
       <td>-1-7</td>
-      <td>seventh, one-seventh</td>
+      <td>.seventh, .one-seventh</td>
       <td>14.2857%</td>
     </tr>
     <tr>
       <td>-2-7</td>
-      <td>two-sevenths</td>
+      <td>.two-sevenths</td>
       <td>28.5714%</td>
     </tr>
     <tr>
       <td>-3-7</td>
-      <td>three-sevenths</td>
+      <td>.three-sevenths</td>
       <td>42.8571%</td>
     </tr>
     <tr>
       <td>-4-7</td>
-      <td>four-sevenths</td>
+      <td>.four-sevenths</td>
       <td>57.1428%</td>
     </tr>
     <tr>
       <td>-5-7</td>
-      <td>five-sevenths</td>
+      <td>.five-sevenths</td>
       <td>71.4285%</td>
     </tr>
     <tr>
       <td>-6-7</td>
-      <td>six-sevenths</td>
+      <td>.six-sevenths</td>
       <td>85.7142%</td>
     </tr>
     <tr>
       <td>-1-8</td>
-      <td>eighth, one-eighth</td>
+      <td>.eighth, .one-eighth</td>
       <td>12.5%</td>
     </tr>
     <tr>
       <td>-3-8</td>
-      <td>three-eighths</td>
+      <td>.three-eighths</td>
       <td>37.5%</td>
     </tr>
     <tr>
       <td>-5-8</td>
-      <td>five-eighths</td>
+      <td>.five-eighths</td>
       <td>62.5%</td>
     </tr>
     <tr>
       <td>-7-8</td>
-      <td>seven-eighths</td>
+      <td>.seven-eighths</td>
       <td>87.5%</td>
     </tr>
   </tbody>
 </table>
 
-So **breakpoint prefix + fractional width suffix = class name.** Use as many classes as you want to handle the element's width at each breakpoint. Example: `<div class="col ph-1-2 tab-2-3 lap-3-4 desk-4-5">`.
+So **breakpoint prefix + fractional width suffix = class name.** Or use the stand-alone class name as a replacement for `.ph-[#]-[#]`. Use as many classes as you want to handle the element's width at each breakpoint. Example: `<div class="col ph-1-2 tab-2-3 lap-3-4 desk-4-5">`.
 
 ### Helper classes ###
 
@@ -328,15 +339,15 @@ Set the alignment of text and other inline-displayed content using one of the fo
     </tr>
     <tr>
       <td>.align-col-l</td>
-      <td>Floats block elements (like .col's) left.</td>
+      <td>Floats block elements (like <code>col</code>s) left.</td>
     </tr>
     <tr>
       <td>.align-col-r</td>
-      <td>Floats block elements (like .col's) right.</td>
+      <td>Floats block elements (like <code>.col</code>s) right.</td>
     </tr>
     <tr>
       <td>.align-col-c</td>
-      <td>Floats block elements (like .col's) in the center of a layer.</td>
+      <td>Floats block elements (like <code>.col</code>s) in the center of a layer.</td>
     </tr>
     <tr>
       <td>.first</td>
@@ -344,7 +355,7 @@ Set the alignment of text and other inline-displayed content using one of the fo
     </tr>
     <tr>
       <td>.not-first</td>
-      <td>Use this class to undo the .first class at any breakpoint.</td>
+      <td>Use this class to undo the <code>.first</code> class at any breakpoint.</td>
     </tr>
   </tbody>
 </table>
@@ -369,7 +380,7 @@ If you want to add padding to an element, use one of the following:
   <tbody>
     <tr>
       <td>.pad</td>
-      <td>Sets 10px of padding on the left and right sides of the element. Does NOT set padding on the top and bottom (use .pad-v or .pad-all for that).</td>
+      <td>Sets 10px of padding on the left and right sides of the element. Does NOT set padding on the top and bottom (use <code>.pad-v</code> or <code>.pad-all</code> for that).</td>
     </tr>
     <tr>
       <td>.pad-all</td>
@@ -377,7 +388,7 @@ If you want to add padding to an element, use one of the following:
     </tr>
     <tr>
       <td>.pad-v</td>
-      <td>Sets 10px of padding on the top and bottom sides of the element. Does NOT set padding on the left and right sides (use .pad or .pad-all for that).</td>
+      <td>Sets 10px of padding on the top and bottom sides of the element. Does NOT set padding on the left and right sides (use <code>.pad</code> or <code>.pad-all</code> for that).</td>
     </tr>
     <tr>
       <td>.pad-l</td>
@@ -456,7 +467,7 @@ Sometimes you need a column to just go away at a certain breakpoint, or only sho
   </tbody>
 </table>
 
-To show or hide an element only for a certain breakpoint, add one of the breakpoint prefixes to the class name. Example: `class="ph-hide lap-show desk-hide"` will hide the element up to 991px, show it between 992px and 1199px, and hide it again at 1200px or wider.
+**Note:** You can also show or hide an element only for a certain breakpoint; just add one of the breakpoint prefixes to the class name. Example: `class="ph-hide lap-show desk-hide"` will hide the element up to 991px, show it between 992px and 1199px, and hide it again at 1200px or wider.
 
 ## Support ##
 
