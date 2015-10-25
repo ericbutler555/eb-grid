@@ -96,14 +96,18 @@ Also like Bootstrap, but without the appended viewport-size and column-width set
 
 There are 4 breakpoints that eb-grid recognizes:
 
-* ph (short for "phone")
-* tab (short for "tablet")
-* lap (short for "laptop")
-* desk (short for "desktop")
+* `.ph` (short for "phone")
+* `.tab` (short for "tablet")
+* `.lap` (short for "laptop")
+* `.desk` (short for "desktop")
 
 There is also a print-specific class in the `eb-grid-print.css` add-on file:
 
-* print
+* `.print`
+
+**New in v0.2:** There is a new class prefix for small phones (0-480px) in the `eb-grid-tiny.css` add-on file:
+
+* `.tiny`
 
 These nicknames form the first part of any class name for a block of content, or `.col`.
 
@@ -117,12 +121,16 @@ is the same as:
 
 This alternate syntax might be easier to read and understand that the column should be 1/4 the width at all viewport sizes.
 
-These `.ph` and un-prefixed classes will apply to elements at any viewport size, unless another class prefixed by `tab-`, `lap-`, or `desk-` is also added to the element (again, just like Bootstrap and Foundation).
+These `.ph` and un-prefixed classes will apply to elements at any viewport size, unless another class prefixed by `.tab-`, `.lap-`, or `.desk-` is also added to the element (again, just like Bootstrap and Foundation).
 
-<table>
+#### Create a Class Name ####
+
+Here's the idea: **Breakpoint prefix + Fractional width suffix = Class name.** Use the 2 tables below to get the breakpoint prefix and fractional width you want for each of your blocks of content.
+
+<table width="100%">
   <thead>
     <tr>
-      <th>Class prefix</th>
+      <th width="15%">Class prefix</th>
       <th>Viewport size it applies to</th>
     </tr>
   </thead>
@@ -147,6 +155,10 @@ These `.ph` and un-prefixed classes will apply to elements at any viewport size,
       <td>.print-</td>
       <td>Printed pages, regardless of size</td>
     </tr>
+    <tr>
+      <td>.tiny-</td>
+      <td>0-480px (can use as override of .ph- classes)</td>
+    </tr>
   </tbody>
 </table>
 
@@ -154,10 +166,10 @@ These `.ph` and un-prefixed classes will apply to elements at any viewport size,
 
 eb-grid allows you to easily set any fractional width on an element, up to eighths. I stopped there because I don't think any element should be narrower than that. Here is a table of all possible column widths, and the class names you can use for them:
 
-<table>
+<table width="100%">
   <thead>
     <tr>
-      <th>Class suffix</th>
+      <th width="15%">Class suffix</th>
       <th>Optional stand-alone class name(s)</th>
       <th>Width of element in layer</th>
     </tr>
@@ -286,7 +298,7 @@ So **breakpoint prefix + fractional width suffix = class name.** Use as many cla
 
 ### Helper classes ###
 
-The only other things eb-grid tries to handle are alignment and spacing on the layers and columns.
+The only other things eb-grid tries to handle are hiding, alignment and spacing on the layers and columns.
 
 -----
 
@@ -294,10 +306,10 @@ The only other things eb-grid tries to handle are alignment and spacing on the l
 
 Set the alignment of text and other inline-displayed content using one of the following classes:
 
-<table>
+<table width="100%">
   <thead>
     <tr>
-      <th>Class name</th>
+      <th width="15%">Class name</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -316,15 +328,15 @@ Set the alignment of text and other inline-displayed content using one of the fo
     </tr>
     <tr>
       <td>.align-col-l</td>
-      <td>Floats block elements (like **.col**s) left.</td>
+      <td>Floats block elements (like .col's) left.</td>
     </tr>
     <tr>
       <td>.align-col-r</td>
-      <td>Floats block elements (like **.col**s) right.</td>
+      <td>Floats block elements (like .col's) right.</td>
     </tr>
     <tr>
       <td>.align-col-c</td>
-      <td>Floats block elements (like **.col**s) in the center of a layer.</td>
+      <td>Floats block elements (like .col's) in the center of a layer.</td>
     </tr>
     <tr>
       <td>.first</td>
@@ -332,12 +344,12 @@ Set the alignment of text and other inline-displayed content using one of the fo
     </tr>
     <tr>
       <td>.not-first</td>
-      <td>Use this class to undo the **.first** class at any breakpoint.</td>
+      <td>Use this class to undo the .first class at any breakpoint.</td>
     </tr>
   </tbody>
 </table>
 
-**Note:** You can also **add a breakpoint prefix to any of the above alignment classes,** to set text or column alignment specifically for a certain breakpoint. For example, an (admittedly insane) element with `class="col half tab-align-r tab-align-col-c desk-align-c desk-align-col-l"` would be centered in the layer with right-aligned text at 768px or wider, and would be floated left in the layer with centered text at 1200px or wider.
+**Note:** You can also **add a breakpoint prefix to any of the above alignment classes,** to set text or column alignment specifically for a certain breakpoint. For example, an (insane) element with `class="col half tab-align-r tab-align-col-c desk-align-c desk-align-col-l"` would be centered in the layer with right-aligned text at 768px or wider, and would be floated left in the layer with centered text at 1200px or wider.
 
 -----
 
@@ -347,17 +359,17 @@ eb-grid offers flexibility when it comes to padding on your layers and columns o
 
 If you want to add padding to an element, use one of the following:
 
-<table>
+<table width="100%">
   <thead>
     <tr>
-      <th>Class name</th>
+      <th width="15%">Class name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>.pad</td>
-      <td>Sets 10px of padding on the left and right sides of the element. Does NOT set padding on the top and bottom (use **.pad-v** or **.pad-all** for that).</td>
+      <td>Sets 10px of padding on the left and right sides of the element. Does NOT set padding on the top and bottom (use .pad-v or .pad-all for that).</td>
     </tr>
     <tr>
       <td>.pad-all</td>
@@ -365,7 +377,7 @@ If you want to add padding to an element, use one of the following:
     </tr>
     <tr>
       <td>.pad-v</td>
-      <td>Sets 10px of padding on the top and bottom sides of the element. Does NOT set padding on the left and right sides (use **.pad** or **.pad-all** for that).</td>
+      <td>Sets 10px of padding on the top and bottom sides of the element. Does NOT set padding on the left and right sides (use .pad or .pad-all for that).</td>
     </tr>
     <tr>
       <td>.pad-l</td>
@@ -386,7 +398,7 @@ If you want to add padding to an element, use one of the following:
   </tbody>
 </table>
 
-**Note:** You can also **add a breakpoint prefix to any of the above padding classes,** to set padding specifically for a certain breakpoint. For example. an (admittedly insane) element with `class="col tab-pad-r lap-pad desk-pad-all"` would have no padding in phone-sized viewports, 10px of right padding at 768px or wider, 10px of left and right padding at 992px or wider, and 10px of left, right, top, and bottom padding at 1200px or wider.
+**Note:** You can also **add a breakpoint prefix to any of the above padding classes,** to set padding specifically for a certain breakpoint. For example. an (insane) element with `class="col tab-pad-r lap-pad desk-pad-all"` would have no padding in phone-sized viewports, 10px of right padding at 768px or wider, 10px of left and right padding at 992px or wider, and 10px of left, right, top, and bottom padding at 1200px or wider.
 
 -----
 
@@ -396,10 +408,10 @@ Currently, eb-grid offers flexibility when it comes to margins on the top and bo
 
 If you want to add top and/or bottom margin to an element, use one of the following:
 
-<table>
+<table width="100%">
   <thead>
     <tr>
-      <th>Class name</th>
+      <th width="15%">Class name</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -425,21 +437,21 @@ If you want to add top and/or bottom margin to an element, use one of the follow
 
 Sometimes you need a column to just go away at a certain breakpoint, or only show up at a certain breakpoint. eb-grid allows you to do that.
 
-<table>
+<table width="100%">
   <thead>
     <tr>
-      <th>Class name</th>
+      <th width="15%">Class name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>.hide</td>
-      <td>Hides the element by setting it to **display:none**.</td>
+      <td>Hides the element by setting it to <code>display:none</code>.</td>
     </tr>
     <tr>
       <td>.show</td>
-      <td>Shows the element by setting it to **display:block**.</td>
+      <td>Shows the element by setting it to <code>display:block</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -448,4 +460,4 @@ To show or hide an element only for a certain breakpoint, add one of the breakpo
 
 ## Support ##
 
-If you have questions or suggestions about eb-grid, create an issue. I'd like this to be truly useful to developers who just need a flexible responsive grid system without any broader scope.
+If you have questions or suggestions about eb-grid, just create an issue. Thanks.
