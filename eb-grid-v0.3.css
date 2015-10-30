@@ -2,7 +2,8 @@
 /*** globals ***/
 * { box-sizing: border-box; }
 /*** layers and columns ***/
-.layer:after { content: ""; display: table; clear: both; }
+.layer:before, .layer:after { content: ""; display: table; }
+.layer:after { clear: both; }
 .col { width: 100%; float: left; overflow: auto; }
 /*** column widths ***/
 .ph-auto, .auto { width: auto; }
