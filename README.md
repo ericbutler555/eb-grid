@@ -1,7 +1,7 @@
 # eb-grid
 Responsive-grid CSS library that's laser-focused and more flexible than Bootstrap or Foundation. Tiny footprint, no class collisions.
 
-*eb-grid is still a work in progress.*
+*eb-grid is still in active development.*
 
 #### Why Bother? ####
 
@@ -20,7 +20,7 @@ eb-grid gives you greater flexibility than other responsive frameworks in two wa
 
 eb-grid has a similar (but simpler) strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
 
-The main difference is that **instead of using a single, global 12- or 16-column grid structure, eb-grid uses fractions in its class names that allow you to set different total column counts for every row of content.**
+The main difference is that **instead of using a single, global 12- or 16-column grid structure, eb-grid uses fractions in its class names that allow you to set different total column counts for any/every row of content on your page.**
 
 >Rows of content in eb-grid are given a class name of ".layer" so that developers can use eb-grid in projects without interfering with Bootstrap and Foundation's ".row" class.
 
@@ -227,7 +227,7 @@ eb-grid allows you to easily set any fractional width on an element, up to eight
   </tbody>
 </table>
 
-Notice the "optional stand-alone class names" in the table above? Those are optional ways of writing a class name for the `.ph-` breakpoint. Since eb-grid takes a mobile-first approach, the `.ph-` breakpoint is the default breakpoint, so if you only apply a width at the `.ph-` level, it will apply to the `.col` at every viewport size. For example:
+Notice the "optional stand-alone class names" in the table above? Those are alternate ways you can write a class name for the `.ph-` breakpoint. For example:
 
     <div class="col ph-1-2"></div>
     <div class="col ph-1-4"></div>
@@ -237,7 +237,7 @@ is the same as:
     <div class="col half"></div>
     <div class="col one-fourth"></div>
 
-This alternate syntax exists just in case you find it easier to understand that these columns will be 1/2 and 1/4 of the `.layer`'s width at all viewport sizes. You can write it either way; they do the same thing.
+Since eb-grid takes a mobile-first approach, the `.ph-` breakpoint is the default style rule, so it will apply to the `.col` at every viewport size unless another class name is added. This alternative "stand-alone" syntax exists just in case you find it easier to understand that these columns will span 1/2 and 1/4 of the `.layer`'s width by default. You can write the class name either way; they do the same thing.
 
 
 ## Helper classes ##
@@ -267,7 +267,7 @@ Sometimes you need a column to show up or go away at a certain breakpoint. Here'
   </tbody>
 </table>
 
-**Note:** Add a breakpoint prefix to either of the above visibility classes in order to hide or show a `.col` dynamically at a certain breakpoint. For example, `class="col ph-hide lap-show"` will hide the element on viewports up to 991px, but show it on viewports wider than that.
+**Note: Add any breakpoint prefix** to either of the above visibility classes in order to hide or show a `.col` dynamically at a certain breakpoint. For example, `class="col ph-hide lap-show"` will hide the element on viewports up to 991px, but show it on viewports wider than that.
 
 #### Alignment ####
 
@@ -316,7 +316,7 @@ You can set the alignment of text and images, or even block elements like `.col`
   </tbody>
 </table>
 
-**Note:** Add a breakpoint prefix to any of the above classes to set the element's alignment dynamically at a certain breakpoint. For example, text in a div with `class="col desk-align-r"` would be left-aligned on viewports up to 1199px, but right-aligned on viewports wider than that.
+**Note: Add any breakpoint prefix** to any of the above classes to set the element's alignment dynamically at a certain breakpoint. For example, text in a div with `class="col desk-align-r"` would be left-aligned on viewports up to 1199px, but right-aligned on viewports wider than that.
 
 #### Padding ####
 
@@ -361,7 +361,7 @@ By default, there is no padding applied to `.col` and `.layer` elements in eb-gr
   </tbody>
 </table>
 
-**Note:** Add a breakpoint prefix to any of the above classes to set padding dynamically at a certain breakpoint. For example, an element with `class="col pad-v tab-pad-all"` would have top and bottom padding on viewports up to 767px, and would add left and right padding to itself on viewports wider than that.
+**Note: Add any breakpoint prefix** to any of the above classes to set padding dynamically at a certain breakpoint. For example, an element with `class="col pad-v tab-pad-all"` would have top and bottom padding on viewports up to 767px, and would add left and right padding to itself on viewports wider than that.
 
 #### Margins ####
 
@@ -390,7 +390,9 @@ By default, there are no margins applied to `.col` and `.layer` elements in eb-g
   </tbody>
 </table>
 
+**Note:** Breakpoint prefixes do not exist for margins yet, since I haven't had a need for it that would justify the extra code/file size. It would be easy to add in if people needed it.
+
 
 ## Support ##
 
-If you have questions or suggestions about eb-grid, just create an issue. Thanks.
+If you have questions or suggestions about eb-grid, just create an issue. Hope this works for you. Thanks.
