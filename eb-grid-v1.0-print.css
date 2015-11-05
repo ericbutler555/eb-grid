@@ -1,3 +1,4 @@
+/* eb-grid v1.0 add-on, copyright 2015 Eric Butler (https://github.com/ericbutler555/eb-grid) */
 /*** for print ***/
 @media only print {
   .print-auto { width: auto; }
@@ -24,24 +25,22 @@
   .print-5-8 { width: 62.5%; }
   .print-7-8 { width: 87.5%; }
   /*** spacing ***/
-  .print-pad { padding-left: 10px; padding-right: 10px; }
-  .print-pad-l { padding-left: 10px; }
-  .print-pad-r { padding-right: 10px; }
-  .print-pad-t { padding-top: 10px; }
-  .print-pad-b { padding-bottom: 10px; }
-  .print-pad-v { padding-top: 10px; padding-bottom: 10px; }
+  .print-pad, .print-pad-l { padding-left: 10px; }
+  .print-pad, .print-pad-r { padding-right: 10px; }
+  .print-pad-v, .print-pad-t { padding-top: 10px; }
+  .print-pad-v, .print-pad-b { padding-bottom: 10px; }
   .print-pad-all { padding: 10px; }
   /*** alignment ***/
   .print-align-l { text-align: left; }
   .print-align-r { text-align: right; }
   .print-align-c { text-align: center; }
-  .print-align-col-l { float: left !important; }
-  .print-align-col-r { float: right !important; }
-  .print-align-col-c { float: none; margin-left: auto; margin-right: auto; }
+  .print-float-l { float: left !important; }
+  .print-float-r { float: right !important; }
+  .print-float-c { float: none !important; margin-left: auto; margin-right: auto; }
   /*** clearing ***/
   .print-first { clear: left; }
   .print-not-first { clear: none; }
   /*** visibility ***/
-  .print-hide { display: none; }
-  .print-show { display: block; }
+  .print-hide { display: none !important; }
+  .print-show { display: block !important; }
 }
