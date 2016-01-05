@@ -1,23 +1,24 @@
 # eb-grid
-Responsive-grid CSS library that's laser-focused on being easy, super flexible and super fast to build with. Tiny footprint, no class collisions with the major CSS frameworks.
 
-*As of version 1.0 eb-grid is stable and will continue to be tested and maintained.*
+Responsive-grid CSS library that's laser-focused on being easy, super flexible and super fast to build with. Small footprint, no class collisions with the major CSS frameworks.
 
-#### Another responsive grid: why bother? ####
+*As of version 1.1 eb-grid is stable and will continue to be tested and maintained.*
+
+## Another responsive grid: why bother? ####
 
 eb-grid gives you greater flexibility than other responsive frameworks in two major ways:
 
-**Variable column totals:** eb-grid uses fraction-based class names so you can change the total number of "base" columns in your grid for every row of content on your page.
+**1. Variable column totals:** eb-grid uses fraction-based class names so you can change the total number of "base" columns in your grid for every row of content on your page.
 
-**More breakpoints:** eb-grid has 6 distinct breakpoints so you can target phones, phablets, tablets, laptops, desktops, and widescreen viewports.
+**2. More breakpoints:** eb-grid has 6 distinct breakpoints so you can target phones, phablets, tablets, laptops, desktops, and widescreen viewports.
 
 Also:
 
-**Less markup:** With eb-grid there are layers and columns. No outer "container" elements, no negative margin trickery, and nesting elements is fine. Forms are a breeze. In fact, you don't even need layers or columns. You can use the fractional-width class names on any elements you want: divs, text, images, form inputs, buttons, whatever.
+**3. Less markup:** With eb-grid there are layers (rows) and columns. No outer "container" elements, no negative margin trickery, and nesting elements is fine. Forms are a breeze. In fact, you don't even need layers or columns if you don't want. You can use the fractional-width class names on any elements you want: divs, text, images, form inputs, buttons, whatever.
 
-**Tiny footprint:** eb-grid is currently just **6.7 kb minified / 1.4 kb gzipped.** So there's basically zero performance impact.
+**4. Lightweight:** eb-grid v1.1 is just **7.3 kb minified.** So there's basically zero performance impact.
 
-**No class collisions:** eb-grid **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation (as long as you're using them on separate elements). So you can use eb-grid as a patch to handle just a certain section, or slowly phase it into a legacy code base, without creating problems in an existing layout.
+**5. No class collisions:** eb-grid **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation (as long as you're using them on separate elements). So you can use eb-grid as a patch to handle just a certain section, or slowly phase it into a legacy code base, without creating problems in an existing layout.
 
 
 ## Basics ##
@@ -396,8 +397,8 @@ By default, there are no margins applied to `.col` and `.layer` (or any other) e
 ## Get Started ##
 
 - Click the "Download ZIP" button, open it after it downloads.
-- Move the `eb-grid-v1.0.min.css` file into your website's root directory or its `css/` subdirectory or wherever.
-- Add a reference to it in your webpage's `<head>` section, like: `<link rel="stylesheet" href="css/eb-grid-v1.0.min.css">`.
+- Move the `eb-grid-v1.1.min.css` file into your website's root directory or its `css/` subdirectory or wherever.
+- Add a reference to it in your webpage's `<head>` section, like: `<link rel="stylesheet" href="css/eb-grid-v1.1.min.css">`.
 - It's ready to use. Add eb-grid classes to your HTML elements however you like.
 
 
