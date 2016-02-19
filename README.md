@@ -4,6 +4,10 @@ Responsive-grid CSS library that's laser-focused on being easy, super flexible a
 
 *As of version 1.1 eb-grid is stable and will continue to be tested and maintained.*
 
+## Version 2 Now Available
+
+[eb-grid v2.x](https://github.com/ericbutler555/eb-grid/tree/v2) exists and is a bit more fleshed out than version 1. One major difference is that it adds padding between columns by default, which is the same as Bootstrap and Foundation. There are other small improvements that don't exist for v1 yet, but I'll bring back down to v1 soon. Anyway, [check out version 2](https://github.com/ericbutler555/eb-grid/tree/v2) if you're interested.
+
 ## Another responsive grid: why bother? ####
 
 eb-grid gives you greater flexibility than other responsive frameworks in two major ways:
