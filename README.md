@@ -480,4 +480,16 @@ If you have questions or suggestions about eb-grid, just create an issue. Hope t
 
 ## Version 2
 
-FYI, [eb-grid v2.x](https://github.com/ericbutler555/eb-grid/tree/v2) exists in the v2 branch. The main difference is that v2 gives a default 10px padding to all column sides, which is a bit more like Bootstrap or Foundation. Otherwise v1 and v2 are the same. [Check out version 2](https://github.com/ericbutler555/eb-grid/tree/v2) if you're interested.
+Version 2 no longer exists; it didn't make sense to keep them both. They were really the same except v2 cols had an arbitrary amount of padding (10px) by default. It's way easier and more flexible for devs to just use v1 and set a custom global padding themselves. Example:
+
+    <link rel="stylesheet" href="eb-grid.min.css">
+    <style>
+      /* you'd obviously put these in your own, separate css file */
+      .col {
+        padding: 15px;
+      }
+      .no-pad {
+        padding: 0 !important;
+      }
+      /* etc */
+    </style>
