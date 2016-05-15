@@ -1,6 +1,9 @@
-/* eb-grid v1.1.1 add-on, https://github.com/ericbutler555/eb-grid/tree/master */
+/*! eb-grid v1.2.0 add-on, https://github.com/ericbutler555/eb-grid/tree/master */
 /*** for print ***/
 @media only print {
+  .print-rtl > .col { float: right; }
+  .print-eq-height { display: table; width: 100%; }
+  .print-eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
   .print-auto { width: auto; }
   .print-full { width: 100%; }
   .print-half, .print-1-2, .print-2-4, .print-3-6, .print-4-8, .print-5-10 { width: 50%; }

@@ -1,13 +1,17 @@
-/* eb-grid v1.1.1
- * Copyright 2015-2016 Eric Butler, licensed under GNU GPLv2, free for personal and commercial use.
- * https://github.com/ericbutler555/eb-grid/tree/master
+/*! eb-grid v1.2.0
+ *  Copyright 2015-2016 Eric Butler, licensed under GNU GPLv2, free for personal and commercial use.
+ *  https://github.com/ericbutler555/eb-grid/tree/master
  */
 /*** globals ***/
-.layer * { box-sizing: border-box; }
+.layer, .layer * { box-sizing: border-box; }
 /*** layers and columns ***/
 .layer:before, .layer:after { content: " "; display: table; }
 .layer:after { clear: both; }
 .col { width: 100%; float: left; }
+.rtl { direction: rtl; }
+.rtl > .col { float: right; direction: ltr; }
+.eq-height { display: table; width: 100%; }
+.eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
 /*** column widths ***/
 .ph-auto, .auto { width: auto; }
 .ph-full, .full { width: 100%; }
@@ -64,6 +68,9 @@
 
 /*** for phablet ***/
 @media only screen and (min-width: 481px) {
+  .phab-rtl > .col { float: right; }
+  .phab-eq-height { display: table; width: 100%; }
+  .phab-eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
   .phab-auto { width: auto; }
   .phab-full { width: 100%; }
   .phab-half, .phab-1-2, .phab-2-4, .phab-3-6, .phab-4-8, .phab-5-10 { width: 50%; }
@@ -120,6 +127,9 @@
 
 /*** for tablet ***/
 @media only screen and (min-width: 768px) {
+  .tab-rtl > .col { float: right; }
+  .tab-eq-height { display: table; width: 100%; }
+  .tab-eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
   .tab-auto { width: auto; }
   .tab-full { width: 100%; }
   .tab-half, .tab-1-2, .tab-2-4, .tab-3-6, .tab-4-8, .tab-5-10 { width: 50%; }
@@ -176,6 +186,9 @@
 
 /*** for laptop ***/
 @media only screen and (min-width: 992px) {
+  .lap-rtl > .col { float: right; }
+  .lap-eq-height { display: table; width: 100%; }
+  .lap-eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
   .lap-auto { width: auto; }
   .lap-full { width: 100%; }
   .lap-half, .lap-1-2, .lap-2-4, .lap-3-6, .lap-4-8, .lap-5-10 { width: 50%; }
@@ -232,6 +245,9 @@
 
 /*** for desktop ***/
 @media only screen and (min-width: 1200px) {
+  .desk-rtl > .col { float: right; }
+  .desk-eq-height { display: table; width: 100%; }
+  .desk-eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
   .desk-auto { width: auto; }
   .desk-full { width: 100%; }
   .desk-half, .desk-1-2, .desk-2-4, .desk-3-6, .desk-4-8, .desk-5-10 { width: 50%; }
@@ -288,6 +304,9 @@
 
 /*** for widescreen ***/
 @media only screen and (min-width: 1600px) {
+  .wide-rtl > .col { float: right; }
+  .wide-eq-height { display: table; width: 100%; }
+  .wide-eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
   .wide-auto { width: auto; }
   .wide-full { width: 100%; }
   .wide-half, .wide-1-2, .wide-2-4, .wide-3-6, .wide-4-8, .wide-5-10 { width: 50%; }

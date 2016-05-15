@@ -1,18 +1,13 @@
 # eb-grid
 
-Responsive-grid CSS library that's laser-focused on being easy, super flexible and super fast to build with. Small footprint, no class collisions with the major CSS frameworks.
-
-
-### Version 2
-
-FYI, [eb-grid v2.x](https://github.com/ericbutler555/eb-grid/tree/v2) exists in the v2 branch. The main difference is that v2 gives a default 10px padding to all column sides, which is a bit more like Bootstrap or Foundation. Otherwise v1 and v2 are the same. [Check out version 2](https://github.com/ericbutler555/eb-grid/tree/v2) if you're interested.
+Responsive-grid CSS library that's laser-focused on being easy, super flexible and super fast to build with. Small file size, no style collisions with the major CSS frameworks.
 
 
 ## Another responsive grid: why bother?
 
-eb-grid gives you greater flexibility than other responsive frameworks in two major ways:
+eb-grid gives you greater flexibility than other responsive-grid frameworks in two major ways:
 
-**1. Variable column totals:** The primary flaw with other grids is that they require a single, global "base" number of columns for your site, usually 12. Try creating a 5-column row with that; you can't. To have a single base that allows anywhere from 1 to 9 columns, it would have to be a 2,520-column base (Google it). Or, you can use eb-grid's fraction-based class names so you can change the total number of "base" columns for every row of content on your page.
+**1. Variable column totals:** The primary flaw with other grids is that they require a single, global "base" number of columns for your site, usually 12. Try creating a 5-column row with that; you can't. To have a single base that allows anywhere from 1 to 10 columns, it would have to be a 2,520-column base (Google it). Or, you can use eb-grid's fraction-based class names so you can change the total number of "base" columns for every row of content on your page.
 
 **2. More breakpoints:** eb-grid has 6 distinct breakpoints so you can set different widths for:
 
@@ -25,14 +20,16 @@ eb-grid gives you greater flexibility than other responsive frameworks in two ma
 
 Also:
 
-**3. Lightweight:** eb-grid v1.1.1 is just **9.4 kb minified,** so it won't impact your site's loading time at all.
+**3. Equal height columns:** Adding one extra class to a row keeps all of its column heights equal, even as their content reflows.
 
-**4. No class collisions:** eb-grid **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation. So you can use eb-grid as a patch to handle just a certain section, or phase it into a legacy code base, without creating problems in an existing layout.
+**4. Lightweight:** eb-grid v1.2.0 is just **10 kb minified,** so it won't impact your site's loading time.
+
+**5. No class collisions:** eb-grid **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation. So you can use eb-grid as a patch to handle just a certain section, or phase it into a legacy code base, without creating problems in an existing layout.
 
 
 ## Basics
 
-eb-grid has a similar (but simpler) strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
+eb-grid has a similar strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
 
 **The main difference is that instead of using a single, global 12- or 16-column grid structure, eb-grid uses fraction-based class names that allow you to set different total column counts for every row of content on your page.**
 
@@ -288,6 +285,43 @@ eb-grid allows you to easily set any fractional width on an element, **up to ten
 </table>
 
 
+## Right to left (RTL) support
+
+Order your columns right-to-left by adding a `.rtl` class to the containing `.layer`:
+
+    <div class="layer rtl">
+      <div class="col tab-1-2"> This div will be on the right when it becomes a column at 768px+. </div>
+      <div class="col tab-1-2"> This div will be on the left when it becomes a column at 768px+. </div>
+    </div>
+
+RTL can also be added at different breakpoints, in case you only want to initiate it at a certain point:
+
+    <div class="layer desk-rtl">
+      ...
+    </div>
+
+The `.col`s inside this `.layer` will run left to right on viewports less than 1200px, and right to left on viewports 1200px or wider.
+
+
+## Equal height columns
+
+As of v1.2.0, eb-grid makes it easy to **ensure that all the columns in a layer are the same height** whenever they're side-by-side. Just use the `eq-height` class on the containing `.layer`:
+
+    <div class="layer tab-eq-height">
+      <div class="col tab-1-4 lap-1-8">No matter what these columns have in them,</div>
+      <div class="col tab-1-4 lap-3-8">they will all have the same height as whichever one is tallest.</div>
+      <div class="col tab-1-2 lap-4-8">And since it uses CSS Table display, it'll work in IE8+!</div>
+    </div>
+
+You can also combine this with RTL support to make equal height columns that order from right to left:
+
+    <div class="layer lap-eq-height rtl">
+      ...
+    </div>
+
+**Note:** it's important to include the breakpoint prefixes so you're only adding this class at the breakpoint where your columns are all side-by-side; if they're stacked you might get unexpected results. This has been a major item on the eb-grid wish-list. Create an issue if it's not working right.
+
+
 ## Helper classes
 
 The goal of eb-grid is to be as lean and grid-focused as possible, so the only other things eb-grid tries to handle are visibility, alignment and padding.
@@ -434,11 +468,16 @@ By default, there is no padding applied to `.col` and `.layer` (or any other) el
 ## Get started
 
 - Click the "Download ZIP" button, open it after it downloads.
-- Move the `eb-grid-v1.1.1.min.css` file into your website's root directory or its `css/` subdirectory or wherever.
-- Add a reference to it in your webpage's `<head>` section, for example: `<link rel="stylesheet" href="css/eb-grid-v1.1.1.min.css">`.
-- It's ready to use. Add eb-grid classes to your HTML elements however you like.
+- Move the `eb-grid-v1.x.x.min.css` file into your website's root directory or its `css/` subdirectory or wherever.
+- Add a reference to it in your webpage's `<head>` section, for example: `<link rel="stylesheet" href="css/eb-grid-v1.x.x.min.css">`.
+- It's ready to use. Add eb-grid's classes to your HTML elements however you like.
 
 
 ## Support
 
 If you have questions or suggestions about eb-grid, just create an issue. Hope this works for you. Thanks.
+
+
+## Version 2
+
+FYI, [eb-grid v2.x](https://github.com/ericbutler555/eb-grid/tree/v2) exists in the v2 branch. The main difference is that v2 gives a default 10px padding to all column sides, which is a bit more like Bootstrap or Foundation. Otherwise v1 and v2 are the same. [Check out version 2](https://github.com/ericbutler555/eb-grid/tree/v2) if you're interested.
