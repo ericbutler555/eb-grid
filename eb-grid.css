@@ -1,4 +1,4 @@
-/*! eb-grid v1.2.0
+/*! eb-grid v1.3.0
  *  Copyright 2015-2016 Eric Butler, licensed under GNU GPLv2, free for personal and commercial use.
  *  https://github.com/ericbutler555/eb-grid/tree/master
  */
@@ -67,7 +67,7 @@
 .ph-show { display: block !important; }
 
 /*** for phablet ***/
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 544px) {
   .phab-rtl > .col { float: right; }
   .phab-eq-height { display: table; width: 100%; }
   .phab-eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }

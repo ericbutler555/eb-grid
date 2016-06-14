@@ -11,18 +11,18 @@ eb-grid gives you greater flexibility than other responsive-grid frameworks in t
 
 **2. More breakpoints:** eb-grid has 6 distinct breakpoints so you can set different widths for:
 
-  * phones, 
-  * phablets, 
-  * tablets, 
-  * laptops, 
-  * desktops, and 
+  * phones,
+  * phablets,
+  * tablets,
+  * laptops,
+  * desktops, and
   * widescreen viewports.
 
 Also:
 
 **3. Equal height columns:** Adding one extra class to a row keeps all of its column heights equal, even as their content reflows.
 
-**4. Lightweight:** eb-grid v1.2.0 is just **10 kb minified,** so it won't impact your site's loading time.
+**4. Lightweight:** eb-grid is just **10 kb minified,** so it won't impact your site's loading time.
 
 **5. No class collisions:** eb-grid **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation. So you can use eb-grid as a patch to handle just a certain section, or phase it into a legacy code base, without creating problems in an existing layout.
 
@@ -45,8 +45,8 @@ eb-grid has a similar strategy as Bootstrap or Foundation, so if you know how to
       </div>
 
       <div class="col phab-1-2">
-        This div will span the full width of the layer in viewports up to 480px,
-        and will span 1/2 the width of the layer in viewports 481px and above.
+        This div will span the full width of the layer in viewports up to 543px,
+        and will span 1/2 the width of the layer in viewports 544px and above.
       </div>
 
     </div>
@@ -65,8 +65,8 @@ Additional classes can be added to `.col`s to change their widths at certain bre
 
       <div class="col phab-1-2 tab-2-5"> blah </div>
       
-      <!-- This will be full width (100%) in viewports up to 480px,
-        1/2-width (50%) in viewports 481px - 767px, and
+      <!-- This will be full width (100%) in viewports up to 543px,
+        1/2-width (50%) in viewports 544px - 767px, and
         2/5-width (40%) in viewports 768px or wider. -->
       
     </div>
@@ -75,7 +75,7 @@ Column divs can have as many extra classes as you like. Here's an extreme exampl
 
     <div class="col ph-2-3 phab-3-4 tab-4-5 lap-5-6 desk-6-7 wide-7-8"> Hello </div>
     
-This div will span 2/3 of its parent's width by default, 3/4 its width when the viewport is over 480 px wide, 4/5 its width when it's 768+ px wide, 5/6 its width when it's 992+ px wide, 6/7 its width when it's 1200+ px wide, and 7/8 its width when it's 1600+ px wide.
+This div will span 2/3 of its parent's width by default, 3/4 its width when the viewport it's 544+ px wide, 4/5 its width when it's 768+ px wide, 5/6 its width when it's 992+ px wide, 6/7 its width when it's 1200+ px wide, and 7/8 its width when it's 1600+ px wide.
 
 You won't need to set a different fractional width at every single breakpoint like this, but whichever ones you'd like to, you can.
 
@@ -98,12 +98,12 @@ You won't need to set a different fractional width at every single breakpoint li
   <tbody>
     <tr>
       <td>ph-</td>
-      <td>0 - 480px</td>
+      <td>0 - 543px</td>
       <td>Phones @ portrait orientation</td>
     </tr>
     <tr>
       <td>phab-</td>
-      <td>481px - 767px</td>
+      <td>544px - 767px</td>
       <td>Phablets<br>Phones @ landscape orientation</td>
     </tr>
     <tr>
@@ -460,7 +460,7 @@ By default, there is no padding applied to `.col` and `.layer` (or any other) el
 **Note: Add any breakpoint prefix** to any of the above classes to set padding dynamically at a certain breakpoint. For example:
 
     <div class="col pad-v phab-pad-all">
-      This div will have top and bottom padding on viewports up to 480px,
+      This div will have top and bottom padding on viewports up to 543px,
       and will have top, bottom, left and right padding on viewports wider than that.
     </div>
     
@@ -468,8 +468,8 @@ By default, there is no padding applied to `.col` and `.layer` (or any other) el
 ## Get started
 
 - Click the "Download ZIP" button, open it after it downloads.
-- Move the `eb-grid-v1.x.x.min.css` file into your website's root directory or its `css/` subdirectory or wherever.
-- Add a reference to it in your webpage's `<head>` section, for example: `<link rel="stylesheet" href="css/eb-grid-v1.x.x.min.css">`.
+- Move the `eb-grid.min.css` file into your website's root directory or its `css/` subdirectory or wherever.
+- Add a reference to it in your webpage's `<head>` section, for example: `<link rel="stylesheet" href="css/eb-grid.min.css">`.
 - It's ready to use. Add eb-grid's classes to your HTML elements however you like.
 
 
