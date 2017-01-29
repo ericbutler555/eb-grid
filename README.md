@@ -1,88 +1,90 @@
-# eb-grid
+# Ro - a mobile-first, responsive CSS grid library
 
-Responsive-grid CSS library that's laser-focused on being easy, super flexible and super fast to build with. Small file size, no style collisions with the major CSS frameworks.
+The easiest, most flexible responsive CSS grid there is. Small file size, works stand-alone or with other frameworks.
 
 
 ## Another responsive grid: why bother?
 
-eb-grid gives you greater flexibility than other responsive-grid frameworks in two major ways:
+Ro gives you greater flexibility than other responsive-grid frameworks in several major ways:
 
-**1. Variable column totals:** The primary flaw with other grids is that they require a single, global "base" number of columns for your site, usually 12. Try creating a 5-column row with that; you can't. To have a single base that allows anywhere from 1 to 10 columns, it would have to be a 2,520-column base (Google it). Or, you can use eb-grid's fraction-based class names so you can change the total number of "base" columns for every row of content on your page.
+**1. More column widths:** Instead of using a global "base" number of columns (usually 12), Ro lets you use any fraction up to tenths to set the width of each column, at each breakpoint and for every row on your page. Create 5 or 7 or 10 equal columns effortlessly.
 
-**2. More breakpoints:** eb-grid has 6 distinct breakpoints so you can set different widths for:
+**2. More breakpoints:** Ro has 6 distinct breakpoints so you can customize content settings for:
 
   * phones,
   * phablets,
   * tablets,
-  * laptops,
-  * desktops, and
-  * widescreen viewports.
+  * wide (landscape) tablets,
+  * laptops, and
+  * desktop displays.
 
-Also:
+**3. Equal height columns:** Add a single class to a row and every column becomes the same height, even as their content reflows.
 
-**3. Equal height columns:** Adding one extra class to a row keeps all of its column heights equal, even as their content reflows.
+**4. Flow columns left or right:** Add a single class to a row and its columns order from right to left, at any breakpoint.
 
-**4. Lightweight:** eb-grid is just **10 kb minified,** so it won't impact your site's loading time.
+**5. Lightweight:** Ro is just **10 kb minified (1.9 kb gzipped),** so it won't impact your site's load time.
 
-**5. No class collisions:** eb-grid **does not interfere** with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation. So you can use eb-grid as a patch to handle just a certain section, or phase it into a legacy code base, without creating problems in an existing layout.
+**6. No class collisions:** Ro does not interfere with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation. So you can use Ro as a patch to handle a certain section, or phase it into a legacy site, without impacting the existing layout.
 
 
 ## Basics
 
-eb-grid has a similar strategy as Bootstrap or Foundation, so if you know how to use those, you'll pick up eb-grid very quickly.
+Ro uses classes to establish rows, columns, dynamic widths, and other grid-related styling. If you've used [Bootstrap](http://getbootstrap.com/) or [Foundation](http://foundation.zurb.com/sites.html), then Ro will be a breeze.
 
-**The main difference is that instead of using a single, global 12- or 16-column grid structure, eb-grid uses fraction-based class names that allow you to set different total column counts for every row of content on your page.**
+**The major difference is that instead of using a single, global 12-column "base" structure, Ro uses fraction-based class names so you can set different total column counts for every row of content on your page.**
 
->Rows of content in eb-grid are given a class name of `.layer` so that developers can use eb-grid in projects without interfering with Bootstrap and Foundation's ".row" class.
+You also don't need an all-encompassing `.container` -- Ro just needs rows and columns.
+
+>Rows use the `.ro` class name so that developers can use Ro in projects without interfering with other frameworks's `.row` class.
 
 
 ### Examples
 
-    <div class="layer">
+    <div class="ro">
     
       <div class="col">
-        This div will span the full width of the layer in all viewports.
+        This div will span the full width of the row in all viewports.
       </div>
 
       <div class="col phab-1-2">
-        This div will span the full width of the layer in viewports up to 543px,
-        and will span 1/2 the width of the layer in viewports 544px and above.
+        This div will span the full width of the row in viewports up to 575px,
+        and will span 1/2 the width of the row in viewports 576px and above.
       </div>
 
     </div>
     
-Each row of content is created with a div with class `.layer`. Inside it, divs with class `.col` form columns of side-by-side content.
+Each row of content is created with a div with class `.ro`. Inside it, divs with class `.col` form columns of side-by-side content.
 
 Additional classes can be added to `.col`s to change their widths at certain breakpoints:
 
-    <div class="layer">
+    <div class="ro">
 
-      <div class="col ph-3-4 desk-3-7"> blah </div>
+      <div class="col ph-3-4 lap-3-7"> blah </div>
       
-      <!-- This will be 3/4-width (75%) in viewports less than 1200px,
+      <!-- This will be 3/4-width (75%) in viewports up to 1199px,
         and 3/7-width (42.8571%) in viewports 1200px or wider. -->
 
 
       <div class="col phab-1-2 tab-2-5"> blah </div>
       
-      <!-- This will be full width (100%) in viewports up to 543px,
-        1/2-width (50%) in viewports 544px - 767px, and
+      <!-- This will be full width (100%) in viewports up to 575px,
+        1/2-width (50%) in viewports 576px - 767px, and
         2/5-width (40%) in viewports 768px or wider. -->
       
     </div>
 
-Column divs can have as many extra classes as you like. Here's an extreme example:
+Column divs can have as many extra classes as you like. Here's the most extreme example:
 
-    <div class="col ph-2-3 phab-3-4 tab-4-5 lap-5-6 desk-6-7 wide-7-8"> Hello </div>
+    <div class="col ph-2-3 phab-3-4 tab-4-5 tabw-5-6 lap-6-7 desk-7-8"> Hello </div>
     
-This div will span 2/3 of its parent's width by default, 3/4 its width when the viewport it's 544+ px wide, 4/5 its width when it's 768+ px wide, 5/6 its width when it's 992+ px wide, 6/7 its width when it's 1200+ px wide, and 7/8 its width when it's 1600+ px wide.
+This div will span 2/3 of its parent's width by default, 3/4 its width when the viewport is 576+ px wide, 4/5 its width at 768+ px wide, 5/6 its width at 992+ px wide, 6/7 its width at 1200+ px wide, and 7/8 its width at 1600+ px wide.
 
-You won't need to set a different fractional width at every single breakpoint like this, but whichever ones you'd like to, you can.
+Obviously you won't need to set a different width at every single breakpoint like this, but for whichever ones you'd like to, you can.
 
 
 ## How to write the class names
 
-**To create a class name for setting a column width, you combine a breakpoint prefix with a fractional-width suffix.** Here are all possible values:
+**To create a class name for setting a column width, you combine a breakpoint prefix with a fractional-width suffix.** Here are the possible values:
 
 
 ## Breakpoints
@@ -91,20 +93,20 @@ You won't need to set a different fractional width at every single breakpoint li
   <thead>
     <tr>
       <th width="20%">Class prefix</th>
-      <th>Viewport size it applies to</th>
-      <th>Possible devices targeted</th>
+      <th>Viewport it applies to</th>
+      <th>Devices targeted</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>ph-</td>
-      <td>0 - 543px</td>
+      <td>0 - 575px</td>
       <td>Phones @ portrait orientation</td>
     </tr>
     <tr>
       <td>phab-</td>
-      <td>544px - 767px</td>
-      <td>Phablets<br>Phones @ landscape orientation</td>
+      <td>576px - 767px</td>
+      <td>Phablets, Phones @ landscape orientation</td>
     </tr>
     <tr>
       <td>tab-</td>
@@ -112,40 +114,33 @@ You won't need to set a different fractional width at every single breakpoint li
       <td>Tablets @ portrait orientation</td>
     </tr>
     <tr>
-      <td>lap-</td>
+      <td>tabw-</td>
       <td>992px - 1199px</td>
-      <td>Smaller laptops<br>Tablets @ landscape orientation</td>
+      <td>Tablets @ landscape orientation</td>
+    </tr>
+    <tr>
+      <td>lap-</td>
+      <td>1200px - 1599px</td>
+      <td>Most laptop computers</td>
     </tr>
     <tr>
       <td>desk-</td>
-      <td>1200px - 1599px</td>
-      <td>Most laptop and desktop computers</td>
-    </tr>
-    <tr>
-      <td>wide-</td>
       <td>1600px +</td>
-      <td>Large-monitor desktop computers</td>
-    </tr>
-    <tr>
-      <td>print-</td>
-      <td>&nbsp;</td>
-      <td>Printed pages, regardless of size</td>
+      <td>Most desktop computers</td>
     </tr>
   </tbody>
 </table>
 
-Note: Since most people probably won't use the `.print-` classes, they can be found in the separate `*-print.css` file in this repo.
-
 
 ## Fractional widths
 
-eb-grid allows you to easily set any fractional width on an element, **up to tenths.** A column really shouldn't need to be narrower than that. Here is a table of all possible column widths, and the class names you can use for them:
+Ro allows you to easily set any fractional width on an element **up to tenths** -- a column really shouldn't need to be narrower than that. Here is a table of all possible column widths, and the class names you can use for them:
 
 <table width="100%">
   <thead>
     <tr>
       <th width="25%">Class suffix</th>
-      <th>Width of element in layer</th>
+      <th>Width of element in row</th>
     </tr>
   </thead>
   <tbody>
@@ -158,39 +153,39 @@ eb-grid allows you to easily set any fractional width on an element, **up to ten
       <td>its auto/default size</td>
     </tr>
     <tr>
-      <td>-half<br>-1-2</td>
+      <td>-half<br>-1-2<br>-2-4<br>-3-6<br>-4-8<br>-5-10</td>
       <td>50%</td>
     </tr>
     <tr>
-      <td>-1-3</td>
+      <td>-1-3<br>-2-6<br>-3-9</td>
       <td>33.3333%</td>
     </tr>
     <tr>
-      <td>-2-3</td>
+      <td>-2-3<br>-4-6<br>-6-9</td>
       <td>66.6666%</td>
     </tr>
     <tr>
-      <td>-1-4</td>
+      <td>-1-4<br>-2-8</td>
       <td>25%</td>
     </tr>
     <tr>
-      <td>-3-4</td>
+      <td>-3-4<br>-6-8</td>
       <td>75%</td>
     </tr>
     <tr>
-      <td>-1-5</td>
+      <td>-1-5<br>-2-10</td>
       <td>20%</td>
     </tr>
     <tr>
-      <td>-2-5</td>
+      <td>-2-5<br>-4-10</td>
       <td>40%</td>
     </tr>
     <tr>
-      <td>-3-5</td>
+      <td>-3-5<br>-6-10</td>
       <td>60%</td>
     </tr>
     <tr>
-      <td>-4-5</td>
+      <td>-4-5<br>-8-10</td>
       <td>80%</td>
     </tr>
     <tr>
@@ -287,27 +282,27 @@ eb-grid allows you to easily set any fractional width on an element, **up to ten
 
 ## Right to left (RTL) support
 
-Order your columns right-to-left by adding a `.rtl` class to the containing `.layer`:
+Order your columns right-to-left by adding a `.rtl` class to the containing row:
 
-    <div class="layer rtl">
+    <div class="ro rtl">
       <div class="col tab-1-2"> This div will be on the right when it becomes a column at 768px+. </div>
       <div class="col tab-1-2"> This div will be on the left when it becomes a column at 768px+. </div>
     </div>
 
 RTL can also be added at different breakpoints, in case you only want to initiate it at a certain point:
 
-    <div class="layer desk-rtl">
+    <div class="ro lap-rtl">
       ...
     </div>
 
-The `.col`s inside this `.layer` will run left to right on viewports less than 1200px, and right to left on viewports 1200px or wider.
+The `.col`s inside this row will run left to right on viewports up to 1199px, and right to left on viewports 1200px or wider.
 
 
 ## Equal height columns
 
-As of v1.2.0, eb-grid makes it easy to **ensure that all the columns in a layer are the same height** whenever they're side-by-side. Just use the `eq-height` class on the containing `.layer`:
+Make all the columns in a row the same height by adding the `.eq-height` class to the containing row:
 
-    <div class="layer tab-eq-height">
+    <div class="ro tab-eq-height">
       <div class="col tab-1-4 lap-1-8">No matter what these columns have in them,</div>
       <div class="col tab-1-4 lap-3-8">they will all have the same height as whichever one is tallest.</div>
       <div class="col tab-1-2 lap-4-8">And since it uses CSS Table display, it'll work in IE8+!</div>
@@ -315,21 +310,21 @@ As of v1.2.0, eb-grid makes it easy to **ensure that all the columns in a layer 
 
 You can also combine this with RTL support to make equal height columns that order from right to left:
 
-    <div class="layer lap-eq-height rtl">
+    <div class="ro lap-eq-height rtl">
       ...
     </div>
 
-**Note:** it's important to include the breakpoint prefixes so you're only adding this class at the breakpoint where your columns are all side-by-side; if they're stacked you might get unexpected results. This has been a major item on the eb-grid wish-list. Create an issue if it's not working right.
+**Note:** it's important to add a breakpoint prefix to `-eq-height` so you're only adding this class at the breakpoint where your column divs sit side-by-side; if they're stacked you may get odd results.
 
 
 ## Helper classes
 
-The goal of eb-grid is to be as lean and grid-focused as possible, so the only other things eb-grid tries to handle are visibility, alignment and padding.
+The goal of Ro is to be as lean and grid-focused as possible, so the only other things it offers helpers for are visibility, alignment, and padding.
 
 
 ### Visibility
 
-Sometimes you need a column to show up or go away at a certain breakpoint. Here's how to do that.
+Sometimes you need a column to show up or go away at a certain breakpoint. Here's how to do that:
 
 <table width="100%">
   <thead>
@@ -341,18 +336,18 @@ Sometimes you need a column to show up or go away at a certain breakpoint. Here'
   <tbody>
     <tr>
       <td>.ph-hide</td>
-      <td>Hides the element by setting it to <code>display:none!important</code>.</td>
+      <td>Hides the element by setting it to <code>display:none</code>.</td>
     </tr>
     <tr>
       <td>.ph-show</td>
-      <td>Shows the element by setting it to <code>display:block!important</code>.</td>
+      <td>Shows the element by setting it to <code>display:block</code>.</td>
     </tr>
   </tbody>
 </table>
 
 **Note: Change `ph-` to another breakpoint prefix** to hide or show the element dynamically at that breakpoint. For example:
 
-    <div class="col ph-hide lap-show lap-1-3">
+    <div class="col ph-hide tabw-show tabw-1-3">
       This div will be hidden on viewports up to 991px,
       but will be visible on viewports wider than that
       (and 1/3 the width of its parent).
@@ -361,7 +356,7 @@ Sometimes you need a column to show up or go away at a certain breakpoint. Here'
 
 ### Alignment
 
-You can set the alignment of text and images, or even block elements like `.col`s, with the following classes:
+You can set an element's alignment and float with the following classes:
 
 <table width="100%">
   <thead>
@@ -373,31 +368,31 @@ You can set the alignment of text and images, or even block elements like `.col`
   <tbody>
     <tr>
       <td>.align-l</td>
-      <td>Aligns "inline" content (like text and images) left by setting <code>text-align:left!important</code>.</td>
+      <td>Aligns "inline" content (like text and images) left by setting <code>text-align:left</code>.</td>
     </tr>
     <tr>
       <td>.align-r</td>
-      <td>Aligns "inline" content (like text and images) right by setting <code>text-align:right!important</code>.</td>
+      <td>Aligns "inline" content (like text and images) right by setting <code>text-align:right</code>.</td>
     </tr>
     <tr>
       <td>.align-c</td>
-      <td>Aligns "inline" content (like text and images) center by setting <code>text-align:center!important</code>.</td>
+      <td>Aligns "inline" content (like text and images) center by setting <code>text-align:center</code>.</td>
     </tr>
     <tr>
       <td>.float-l</td>
-      <td>Floats block elements (like <code>col</code>s) left by setting <code>float:left!important</code>.</td>
+      <td>Floats block elements (like divs) left by setting <code>float:left</code>.</td>
     </tr>
     <tr>
       <td>.float-r</td>
-      <td>Floats block elements (like <code>.col</code>s) right by setting <code>float:right!important</code>.</td>
+      <td>Floats block elements (like divs) right by setting <code>float:right</code>.</td>
     </tr>
     <tr>
       <td>.float-c</td>
-      <td>Floats block elements (like <code>.col</code>s) in the center of a layer by setting <code>float:none!important; margin-left:auto!important; margin-right:auto!important;</code>.</td>
+      <td>Floats block elements (like divs) in the center of a layer by setting <code>float:none; margin-left:auto; margin-right:auto;</code>.</td>
     </tr>
     <tr>
       <td>.first</td>
-      <td>Use this class if the element should always be first (all the way left) in a layer.</td>
+      <td>Use this class if an element should always be first (all the way left) in a layer.</td>
     </tr>
     <tr>
       <td>.not-first</td>
@@ -408,7 +403,7 @@ You can set the alignment of text and images, or even block elements like `.col`
 
 **Note: Add any breakpoint prefix** to any of the above classes to set the element's alignment dynamically at a certain breakpoint. For example:
 
-    <div class="col ph-1-3 desk-align-r desk-1-9">
+    <div class="col ph-1-3 lap-1-9 lap-align-r">
       Text in this div will be left-aligned (and 1/3 the width of its parent) on viewports up to 1199px,
       but right-aligned (and 1/9 the width of its parent) on viewports wider than that.
     </div>
@@ -416,7 +411,7 @@ You can set the alignment of text and images, or even block elements like `.col`
 
 ### Padding ###
 
-By default, there is no padding applied to `.col` and `.layer` (or any other) elements in eb-grid. This gives you more flexibility and prevents interfering with any existing or intended layout you have. If you want to add padding to an element, use custom styling or one of the following:
+By default, there are no padding styles applied to `.ro` or `.col` (or any other) elements in Ro. This gives you more flexibility and prevents interfering with any existing or intended layout you have. If you want to add padding to an element, use custom styling or one of the following:
 
 <table width="100%">
   <thead>
@@ -428,11 +423,11 @@ By default, there is no padding applied to `.col` and `.layer` (or any other) el
   <tbody>
     <tr>
       <td>.pad</td>
-      <td>Sets <code>padding-left:10px; padding-right:10px;</code> on the element. Does NOT set padding on the top and bottom (use <code>.pad-v</code> or <code>.pad-all</code> for that).</td>
+      <td>Sets <code>padding-left:10px; padding-right:10px;</code> on the element. Does NOT set padding on the top or bottom (use <code>.pad-v</code> or <code>.pad-all</code> for that).</td>
     </tr>
     <tr>
       <td>.pad-v</td>
-      <td>Sets <code>padding-top:10px; padding-bottom:10px;</code> on the element. Does NOT set padding on the left and right sides (use <code>.pad</code> or <code>.pad-all</code> for that).</td>
+      <td>Sets <code>padding-top:10px; padding-bottom:10px;</code> on the element. Does NOT set padding on the left or right sides (use <code>.pad</code> or <code>.pad-all</code> for that).</td>
     </tr>
     <tr>
       <td>.pad-all</td>
@@ -459,37 +454,20 @@ By default, there is no padding applied to `.col` and `.layer` (or any other) el
 
 **Note: Add any breakpoint prefix** to any of the above classes to set padding dynamically at a certain breakpoint. For example:
 
-    <div class="col pad-v phab-pad-all">
-      This div will have top and bottom padding on viewports up to 543px,
-      and will have top, bottom, left and right padding on viewports wider than that.
+    <div class="col pad phab-pad-all">
+      This div will have left and right padding on viewports up to 575px,
+      and padding on all sides on viewports wider than that.
     </div>
     
 
 ## Get started
 
 - Click the "Download ZIP" button, open it after it downloads.
-- Move the `eb-grid.min.css` file into your website's root directory or its `css/` subdirectory or wherever.
-- Add a reference to it in your webpage's `<head>` section, for example: `<link rel="stylesheet" href="css/eb-grid.min.css">`.
-- It's ready to use. Add eb-grid's classes to your HTML elements however you like.
+- Move the `ro.min.css` file into your website's `css/` folder or wherever.
+- Add a reference to it in your webpage's `<head>` section, for example: `<link rel="stylesheet" href="css/ro.min.css">`.
+- It's ready to use. Add Ro's classes to your HTML elements however you like.
 
 
 ## Support
 
-If you have questions or suggestions about eb-grid, just create an issue. Hope this works for you. Thanks.
-
-
-## Version 2
-
-Version 2 no longer exists; it didn't make sense to keep them both. They were really the same except v2 cols had an arbitrary amount of padding (10px) by default. It's way easier and more flexible for devs to just use v1 and set a custom global padding themselves. Example:
-
-    <link rel="stylesheet" href="eb-grid.min.css">
-    <style>
-      /* you'd obviously put these in your own, separate css file */
-      .col {
-        padding: 15px;
-      }
-      .no-pad {
-        padding: 0 !important;
-      }
-      /* etc */
-    </style>
+If you have a question or suggestion about Ro, just create an issue. Hope this works for you.
