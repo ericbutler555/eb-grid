@@ -18,13 +18,13 @@ Ro gives you greater flexibility than other responsive-grid frameworks in severa
   * laptops, and
   * desktop displays.
 
-**3. Equal height columns:** Add a single class to a row and every column becomes the same height, even as their content reflows.
+**3. Equal height columns:** Add a single class to a row and its columns all grow to the same height, even as their content reflows.
 
-**4. Flow columns left or right:** Add a single class to a row and its columns order from right to left, at any breakpoint.
+**4. Flow columns left or right:** Add a single class to a row and its columns order from right to left, starting at any breakpoint.
 
 **5. Lightweight:** Ro is just **10 kb minified (1.9 kb gzipped),** so it won't impact your site's load time.
 
-**6. No class collisions:** Ro does not interfere with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation. So you can use Ro as a patch to handle a certain section, or phase it into a legacy site, without impacting the existing layout.
+**6. No class collisions:** Ro does not interfere with, and can be used in the same project alongside, other responsive frameworks like Bootstrap and Foundation. So you can use Ro as a patch to handle a certain section, or phase it into a legacy site, without creating problems in the existing layout.
 
 
 ## Basics
@@ -35,7 +35,7 @@ Ro uses classes to establish rows, columns, dynamic widths, and other grid-relat
 
 You also don't need an all-encompassing `.container` -- Ro just needs rows and columns.
 
->Rows use the `.ro` class name so that developers can use Ro in projects without interfering with other frameworks's `.row` class.
+>Rows use `.ro` as their class name so that developers can use Ro in projects without interfering with other frameworks's typical `.row` class.
 
 
 ### Examples
@@ -59,13 +59,13 @@ Additional classes can be added to `.col`s to change their widths at certain bre
 
     <div class="ro">
 
-      <div class="col ph-3-4 lap-3-7"> blah </div>
+      <div class="col ph-3-4 lap-3-7"> ... </div>
       
       <!-- This will be 3/4-width (75%) in viewports up to 1199px,
         and 3/7-width (42.8571%) in viewports 1200px or wider. -->
 
 
-      <div class="col phab-1-2 tab-2-5"> blah </div>
+      <div class="col phab-1-2 tab-2-5"> ... </div>
       
       <!-- This will be full width (100%) in viewports up to 575px,
         1/2-width (50%) in viewports 576px - 767px, and
@@ -75,7 +75,9 @@ Additional classes can be added to `.col`s to change their widths at certain bre
 
 Column divs can have as many extra classes as you like. Here's the most extreme example:
 
-    <div class="col ph-2-3 phab-3-4 tab-4-5 tabw-5-6 lap-6-7 desk-7-8"> Hello </div>
+    <div class="col ph-2-3 phab-3-4 tab-4-5 tabw-5-6 lap-6-7 desk-7-8">
+      ...
+    </div>
     
 This div will span 2/3 of its parent's width by default, 3/4 its width when the viewport is 576+ px wide, 4/5 its width at 768+ px wide, 5/6 its width at 992+ px wide, 6/7 its width at 1200+ px wide, and 7/8 its width at 1600+ px wide.
 
@@ -99,32 +101,32 @@ Obviously you won't need to set a different width at every single breakpoint lik
   </thead>
   <tbody>
     <tr>
-      <td>ph-</td>
+      <td>.ph-</td>
       <td>0 - 575px</td>
       <td>Phones @ portrait orientation</td>
     </tr>
     <tr>
-      <td>phab-</td>
+      <td>.phab-</td>
       <td>576px - 767px</td>
-      <td>Phablets, Phones @ landscape orientation</td>
+      <td>Phablets, phones @ landscape orientation</td>
     </tr>
     <tr>
-      <td>tab-</td>
+      <td>.tab-</td>
       <td>768px - 991px</td>
       <td>Tablets @ portrait orientation</td>
     </tr>
     <tr>
-      <td>tabw-</td>
+      <td>.tabw-</td>
       <td>992px - 1199px</td>
       <td>Tablets @ landscape orientation</td>
     </tr>
     <tr>
-      <td>lap-</td>
+      <td>.lap-</td>
       <td>1200px - 1599px</td>
       <td>Most laptop computers</td>
     </tr>
     <tr>
-      <td>desk-</td>
+      <td>.desk-</td>
       <td>1600px +</td>
       <td>Most desktop computers</td>
     </tr>
@@ -134,13 +136,13 @@ Obviously you won't need to set a different width at every single breakpoint lik
 
 ## Fractional widths
 
-Ro allows you to easily set any fractional width on an element **up to tenths** -- a column really shouldn't need to be narrower than that. Here is a table of all possible column widths, and the class names you can use for them:
+Ro allows you to easily give columns any fractional width **up to tenths** -- a column really shouldn't need to be narrower than that. Here is a table of all possible column widths, and the class names to use for them:
 
 <table width="100%">
   <thead>
     <tr>
       <th width="25%">Class suffix</th>
-      <th>Width of element in row</th>
+      <th>Width of column in row</th>
     </tr>
   </thead>
   <tbody>
@@ -150,7 +152,7 @@ Ro allows you to easily set any fractional width on an element **up to tenths** 
     </tr>
     <tr>
       <td>-auto</td>
-      <td>its auto/default size</td>
+      <td>its automatic width</td>
     </tr>
     <tr>
       <td>-half<br>-1-2<br>-2-4<br>-3-6<br>-4-8<br>-5-10</td>
@@ -300,7 +302,7 @@ The `.col`s inside this row will run left to right on viewports up to 1199px, an
 
 ## Equal height columns
 
-Make all the columns in a row the same height by adding the `.eq-height` class to the containing row:
+Make all the columns in a row the same height by adding the `.eq-height` class to the row:
 
     <div class="ro tab-eq-height">
       <div class="col tab-1-4 lap-1-8">No matter what these columns have in them,</div>
@@ -308,18 +310,18 @@ Make all the columns in a row the same height by adding the `.eq-height` class t
       <div class="col tab-1-2 lap-4-8">And since it uses CSS Table display, it'll work in IE8+!</div>
     </div>
 
+**Note:** it's important to add a breakpoint prefix to `-eq-height` so you're only adding this style at the breakpoint where your column divs start sitting side-by-side.
+
 You can also combine this with RTL support to make equal height columns that order from right to left:
 
     <div class="ro lap-eq-height rtl">
       ...
     </div>
 
-**Note:** it's important to add a breakpoint prefix to `-eq-height` so you're only adding this class at the breakpoint where your column divs sit side-by-side; if they're stacked you may get odd results.
-
 
 ## Helper classes
 
-The goal of Ro is to be as lean and grid-focused as possible, so the only other things it offers helpers for are visibility, alignment, and padding.
+Ro's goal is to be as lean and grid-focused as possible, so the only other things it has helpers for are visibility, alignment, and padding.
 
 
 ### Visibility
@@ -336,16 +338,16 @@ Sometimes you need a column to show up or go away at a certain breakpoint. Here'
   <tbody>
     <tr>
       <td>.ph-hide</td>
-      <td>Hides the element by setting it to <code>display:none</code>.</td>
+      <td>Hides the column by setting it to <code>display:none</code>.</td>
     </tr>
     <tr>
       <td>.ph-show</td>
-      <td>Shows the element by setting it to <code>display:block</code>.</td>
+      <td>Shows the column by setting it to <code>display:block</code>.</td>
     </tr>
   </tbody>
 </table>
 
-**Note: Change `ph-` to another breakpoint prefix** to hide or show the element dynamically at that breakpoint. For example:
+**Note: Change `ph-` to another breakpoint prefix** to hide or show the column dynamically at that breakpoint. For example:
 
     <div class="col ph-hide tabw-show tabw-1-3">
       This div will be hidden on viewports up to 991px,
@@ -356,7 +358,7 @@ Sometimes you need a column to show up or go away at a certain breakpoint. Here'
 
 ### Alignment
 
-You can set an element's alignment and float with the following classes:
+You can set a column's alignment and float with the following classes:
 
 <table width="100%">
   <thead>
@@ -368,40 +370,40 @@ You can set an element's alignment and float with the following classes:
   <tbody>
     <tr>
       <td>.align-l</td>
-      <td>Aligns "inline" content (like text and images) left by setting <code>text-align:left</code>.</td>
+      <td>Aligns inline content (like text and images) left by setting <code>text-align:left</code>.</td>
     </tr>
     <tr>
       <td>.align-r</td>
-      <td>Aligns "inline" content (like text and images) right by setting <code>text-align:right</code>.</td>
+      <td>Aligns inline content (like text and images) right by setting <code>text-align:right</code>.</td>
     </tr>
     <tr>
       <td>.align-c</td>
-      <td>Aligns "inline" content (like text and images) center by setting <code>text-align:center</code>.</td>
+      <td>Aligns inline content (like text and images) center by setting <code>text-align:center</code>.</td>
     </tr>
     <tr>
       <td>.float-l</td>
-      <td>Floats block elements (like divs) left by setting <code>float:left</code>.</td>
+      <td>Floats a column left by setting <code>float:left</code>.</td>
     </tr>
     <tr>
       <td>.float-r</td>
-      <td>Floats block elements (like divs) right by setting <code>float:right</code>.</td>
+      <td>Floats a column right by setting <code>float:right</code>.</td>
     </tr>
     <tr>
       <td>.float-c</td>
-      <td>Floats block elements (like divs) in the center of a layer by setting <code>float:none; margin-left:auto; margin-right:auto;</code>.</td>
+      <td>Floats a column in the center of a row by setting <code>float:none; margin-left:auto; margin-right:auto;</code>.</td>
     </tr>
     <tr>
       <td>.first</td>
-      <td>Use this class if an element should always be first (all the way left) in a layer.</td>
+      <td>Use this class if a column should always be first (all the way left) in a row.</td>
     </tr>
     <tr>
       <td>.not-first</td>
-      <td>Use this class to undo the <code>.first</code> class at any subsequent (wider) breakpoint.</td>
+      <td>Use this class to undo the <code>.first</code> class at any wider breakpoint.</td>
     </tr>
   </tbody>
 </table>
 
-**Note: Add any breakpoint prefix** to any of the above classes to set the element's alignment dynamically at a certain breakpoint. For example:
+**Note: Add any breakpoint prefix** to any of the above classes to set the column's alignment dynamically at a certain breakpoint. For example:
 
     <div class="col ph-1-3 lap-1-9 lap-align-r">
       Text in this div will be left-aligned (and 1/3 the width of its parent) on viewports up to 1199px,
@@ -411,7 +413,7 @@ You can set an element's alignment and float with the following classes:
 
 ### Padding ###
 
-By default, there are no padding styles applied to `.ro` or `.col` (or any other) elements in Ro. This gives you more flexibility and prevents interfering with any existing or intended layout you have. If you want to add padding to an element, use custom styling or one of the following:
+By default, there are no padding styles applied to `.ro` or `.col` (or any other) elements in Ro. This gives you more flexibility and prevents interfering with any existing or intended layout you have. If you want to add padding to a column, use custom styling or one of the following:
 
 <table width="100%">
   <thead>
@@ -423,31 +425,31 @@ By default, there are no padding styles applied to `.ro` or `.col` (or any other
   <tbody>
     <tr>
       <td>.pad</td>
-      <td>Sets <code>padding-left:10px; padding-right:10px;</code> on the element. Does NOT set padding on the top or bottom (use <code>.pad-v</code> or <code>.pad-all</code> for that).</td>
+      <td>Sets <code>padding-left:10px; padding-right:10px;</code> on the column. Does NOT set padding on the top or bottom (use <code>.pad-v</code> or <code>.pad-all</code> for that).</td>
     </tr>
     <tr>
       <td>.pad-v</td>
-      <td>Sets <code>padding-top:10px; padding-bottom:10px;</code> on the element. Does NOT set padding on the left or right sides (use <code>.pad</code> or <code>.pad-all</code> for that).</td>
+      <td>Sets <code>padding-top:10px; padding-bottom:10px;</code> on the column. Does NOT set padding on the left or right sides (use <code>.pad</code> or <code>.pad-all</code> for that).</td>
     </tr>
     <tr>
       <td>.pad-all</td>
-      <td>Sets <code>padding:10px;</code> on the element, so all sides will have padding.</td>
+      <td>Sets <code>padding:10px;</code> on the column, so all sides will have padding.</td>
     </tr>
     <tr>
       <td>.pad-l</td>
-      <td>Sets <code>padding-left:10px;</code> on the element. Leaves all other sides as-is (0 by default).</td>
+      <td>Sets <code>padding-left:10px;</code> on the column. Leaves all other sides as-is (0 by default).</td>
     </tr>
     <tr>
       <td>.pad-r</td>
-      <td>Sets <code>padding-right:10px;</code> on the element. Leaves all other sides as-is (0 by default).</td>
+      <td>Sets <code>padding-right:10px;</code> on the column. Leaves all other sides as-is (0 by default).</td>
     </tr>
     <tr>
       <td>.pad-t</td>
-      <td>Sets <code>padding-top:10px;</code> on the element. Leaves all other sides as-is (0 by default).</td>
+      <td>Sets <code>padding-top:10px;</code> on the column. Leaves all other sides as-is (0 by default).</td>
     </tr>
     <tr>
       <td>.pad-b</td>
-      <td>Sets <code>padding-bottom:10px;</code> on the element. Leaves all other sides as-is (0 by default).</td>
+      <td>Sets <code>padding-bottom:10px;</code> on the column. Leaves all other sides as-is (0 by default).</td>
     </tr>
   </tbody>
 </table>
@@ -463,7 +465,7 @@ By default, there are no padding styles applied to `.ro` or `.col` (or any other
 ## Get started
 
 - Click the "Download ZIP" button, open it after it downloads.
-- Move the `ro.min.css` file into your website's `css/` folder or wherever.
+- Move the `ro.min.css` file into your website's `css/` folder (or wherever).
 - Add a reference to it in your webpage's `<head>` section, for example: `<link rel="stylesheet" href="css/ro.min.css">`.
 - It's ready to use. Add Ro's classes to your HTML elements however you like.
 
