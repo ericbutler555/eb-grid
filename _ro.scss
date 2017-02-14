@@ -1,74 +1,10 @@
-/*! Ro - a responsive grid library. https://github.com/ericbutler555/eb-grid/tree/master */
+/*! Ro - a responsive grid library. https://github.com/ericbutler555/ro/tree/master */
 /* Copyright 2015-2017 Eric Butler, licensed under GNU GPLv3, free for personal and commercial use. */
 
 
 // variables
 $side-pad-amt:     10px;
 $vertical-pad-amt: 10px;
-
-
-// mixin
-@mixin ebgridify ($class-prefix, $breakpoint) {
-  .#{$class-prefix} {
-    @media (min-width: $breakpoint) {
-      &-rtl > .col { float: right; }
-      &-eq-height { display: table; width: 100%; }
-      &-eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
-      &-auto { width: auto; }
-      &-full { width: 100%; }
-      &-half, &-1-2, &-2-4, &-3-6, &-4-8, &-5-10 { width: 50%; }
-      &-1-3, &-2-6, &-3-9 { width: 33.3333%; }
-      &-2-3, &-4-6, &-6-9 { width: 66.6666%; }
-      &-1-4, &-2-8 { width: 25%; }
-      &-3-4, &-6-8 { width: 75%; }
-      &-1-5, &-2-10 { width: 20%; }
-      &-2-5, &-4-10 { width: 40%; }
-      &-3-5, &-6-10 { width: 60%; }
-      &-4-5, &-8-10 { width: 80%; }
-      &-1-6 { width: 16.6666%; }
-      &-5-6 { width: 83.3333%; }
-      &-1-7 { width: 14.2857%; }
-      &-2-7 { width: 28.5714%; }
-      &-3-7 { width: 42.8571%; }
-      &-4-7 { width: 57.1428%; }
-      &-5-7 { width: 71.4285%; }
-      &-6-7 { width: 85.7142%; }
-      &-1-8 { width: 12.5%; }
-      &-3-8 { width: 37.5%; }
-      &-5-8 { width: 62.5%; }
-      &-7-8 { width: 87.5%; }
-      &-1-9 { width: 11.1111%; }
-      &-2-9 { width: 22.2222%; }
-      &-4-9 { width: 44.4444%; }
-      &-5-9 { width: 55.5555%; }
-      &-7-9 { width: 77.7777%; }
-      &-8-9 { width: 88.8888%; }
-      &-1-10 { width: 10%; }
-      &-3-10 { width: 30%; }
-      &-7-10 { width: 70%; }
-      &-9-10 { width: 90%; }
-      // padding
-      &-pad, &-pad-l { padding-left: $side-pad-amt !important; }
-      &-pad, &-pad-r { padding-right: $side-pad-amt !important; }
-      &-pad-v, &-pad-t { padding-top: $vertical-pad-amt !important; }
-      &-pad-v, &-pad-b { padding-bottom: $vertical-pad-amt !important; }
-      &-pad-all { padding: $side-pad-amt !important; }
-      // alignment
-      &-align-l { text-align: left !important; }
-      &-align-r { text-align: right !important; }
-      &-align-c { text-align: center !important; }
-      &-float-l { float: left !important; }
-      &-float-r { float: right !important; }
-      &-float-c { float: none !important; margin-left: auto !important; margin-right: auto !important; }
-      // clearing
-      &-first { clear: left !important; }
-      &-not-first { clear: none !important; }
-      // visibility
-      &-hide { display: none !important; }
-      &-show { display: block !important; }
-    } // end media
-  } // end class
-} // end ebgridify
 
 
 // rows and columns
@@ -80,7 +16,6 @@ $vertical-pad-amt: 10px;
 .rtl > .col { float: right; direction: ltr; }
 .eq-height { display: table; width: 100%; }
 .eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
-
 
 // column widths
 .ph-auto, .auto { width: auto; }
@@ -141,9 +76,73 @@ $vertical-pad-amt: 10px;
 .ph-show { display: block !important; }
 
 
+// mixin for breakpoints
+@mixin ro-break ($class-prefix, $breakpoint, $min-or-max: 'min') {
+  .#{$class-prefix} {
+    @media (#{$min-or-max}-width: $breakpoint) {
+      &-rtl > .col { float: right; }
+      &-eq-height { display: table; width: 100%; }
+      &-eq-height > .col { display: table-cell; vertical-align: top; float: none !important; }
+      &-auto { width: auto; }
+      &-full { width: 100%; }
+      &-half, &-1-2, &-2-4, &-3-6, &-4-8, &-5-10 { width: 50%; }
+      &-1-3, &-2-6, &-3-9 { width: 33.3333%; }
+      &-2-3, &-4-6, &-6-9 { width: 66.6666%; }
+      &-1-4, &-2-8 { width: 25%; }
+      &-3-4, &-6-8 { width: 75%; }
+      &-1-5, &-2-10 { width: 20%; }
+      &-2-5, &-4-10 { width: 40%; }
+      &-3-5, &-6-10 { width: 60%; }
+      &-4-5, &-8-10 { width: 80%; }
+      &-1-6 { width: 16.6666%; }
+      &-5-6 { width: 83.3333%; }
+      &-1-7 { width: 14.2857%; }
+      &-2-7 { width: 28.5714%; }
+      &-3-7 { width: 42.8571%; }
+      &-4-7 { width: 57.1428%; }
+      &-5-7 { width: 71.4285%; }
+      &-6-7 { width: 85.7142%; }
+      &-1-8 { width: 12.5%; }
+      &-3-8 { width: 37.5%; }
+      &-5-8 { width: 62.5%; }
+      &-7-8 { width: 87.5%; }
+      &-1-9 { width: 11.1111%; }
+      &-2-9 { width: 22.2222%; }
+      &-4-9 { width: 44.4444%; }
+      &-5-9 { width: 55.5555%; }
+      &-7-9 { width: 77.7777%; }
+      &-8-9 { width: 88.8888%; }
+      &-1-10 { width: 10%; }
+      &-3-10 { width: 30%; }
+      &-7-10 { width: 70%; }
+      &-9-10 { width: 90%; }
+      // padding
+      &-pad, &-pad-l { padding-left: $side-pad-amt !important; }
+      &-pad, &-pad-r { padding-right: $side-pad-amt !important; }
+      &-pad-v, &-pad-t { padding-top: $vertical-pad-amt !important; }
+      &-pad-v, &-pad-b { padding-bottom: $vertical-pad-amt !important; }
+      &-pad-all { padding: $side-pad-amt !important; }
+      // alignment
+      &-align-l { text-align: left !important; }
+      &-align-r { text-align: right !important; }
+      &-align-c { text-align: center !important; }
+      &-float-l { float: left !important; }
+      &-float-r { float: right !important; }
+      &-float-c { float: none !important; margin-left: auto !important; margin-right: auto !important; }
+      // clearing
+      &-first { clear: left !important; }
+      &-not-first { clear: none !important; }
+      // visibility
+      &-hide { display: none !important; }
+      &-show { display: block !important; }
+    } // end media
+  } // end class
+} // end ro-break
+
+
 // add breakpoints
-@include ebgridify('phab',  576px);
-@include ebgridify('tab',   768px);
-@include ebgridify('tabw',  992px);
-@include ebgridify('lap',  1200px);
-@include ebgridify('desk', 1600px);
+@include ro-break('phab',  576px);
+@include ro-break('tab',   768px);
+@include ro-break('tabw',  992px);
+@include ro-break('lap',  1200px);
+@include ro-break('desk', 1600px);
