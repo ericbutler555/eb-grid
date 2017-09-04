@@ -1,16 +1,16 @@
 # Ro - a responsive grid library.
 
-A simple, mobile-first responsive CSS library.
+A lean, mobile-first responsive CSS library.
 
-Easy to understand, flexible, robust. Small file (9kb), works alone or with other libraries.
+Easy to understand, flexible and helpful. Small file (9kb), works by itself or with other libraries.
 
 Options:
 
 * Up to 6 media breakpoints
 * Equal-height columns
-* Right-to-left column ordering
+* Reverse column ordering
 
-## How to use:
+## How to use
 
 Give each row container a `.ro` class.
 
@@ -20,7 +20,7 @@ Give each column a `.col` class. For responsive widths, form class names by comb
 
 will make a column that's 2/3 wide on a tablet (768px or wider).
 
-### Breakpoint prefixes for class names:
+### Breakpoint prefixes for class names
 
 <table width="100%">
   <thead>
@@ -64,13 +64,13 @@ will make a column that's 2/3 wide on a tablet (768px or wider).
   </tbody>
 </table>
 
-### Fractions for class names:
+### Fractions for class names
 
 Any fraction up to tenths (1/10, 7/10, etc.) is supported. 4/6 works the same as 2/3. For the class name, use hyphens instead of slashes: `1-4` instead of `1/4`.
 
 Use the `.auto` class to let a column or element stay its natural width.
 
-### Examples:
+### Examples
 
     <div class="ro">
 
@@ -108,7 +108,7 @@ Make all the columns in a row the same height by adding the `.eq-height` class a
       <div class="col lap-1-5"> ... </div>
     </div>
 
-You can also combine this with the `.rtl` class to make equal height columns that order from right to left.
+You can also combine this with the `.rtl` class to make equal height columns that order from right to left:
 
     <div class="ro lap-eq-height lap-rtl"> ... </div>
 
@@ -122,7 +122,7 @@ To hide or show an element, use a breakpoint prefix with `hide` or `show`:
 
 ### Alignment
 
-Set an element's alignment or float:
+Set an element's text alignment or float:
 
 * `.align-l` aligns text left
 * `.align-r` aligns text right
@@ -158,7 +158,7 @@ Add a breakpoint prefix to any of these to make them viewport-relative. For exam
 
 ## Get started
 
-* Click the "Download ZIP" button, open it after it downloads.
+* Click the "Download ZIP" button, unzip it after it downloads.
 * Move the `ro.min.css` file into your site files.
 * Add a reference to it in your webpage's `<head>` section, for example: `<link rel="stylesheet" href="css/ro.min.css">`.
 * Add Ro's classes to your page's HTML elements however you like.
