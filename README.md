@@ -7,6 +7,7 @@ Easy to understand, flexible and helpful. Small file (9kb), works by itself or w
 Options:
 
 * Up to 6 media breakpoints
+* Any # of columns per row, 1-10
 * Equal-height columns
 * Reverse column ordering
 
